@@ -59,7 +59,7 @@ namespace Page_d_accueil
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(156, 256);
+            this.button1.Location = new System.Drawing.Point(156, 226);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 54);
             this.button1.TabIndex = 2;
@@ -69,7 +69,7 @@ namespace Page_d_accueil
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(458, 256);
+            this.button2.Location = new System.Drawing.Point(458, 226);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(187, 54);
             this.button2.TabIndex = 3;
