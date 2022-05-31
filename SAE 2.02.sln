@@ -5,13 +5,7 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Page d'accueil", "Page d'accueil\Page d'accueil.csproj", "{C99DFE6A-5281-49BC-97EF-B284840D6B9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculateur d'itinéraire", "Calculateur d'itinéraire\Calculateur d'itinéraire.csproj", "{CDD35259-51DD-4268-B969-E9799FE92575}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carte du reseau", "Carte du reseau\Carte du reseau.csproj", "{64ABCC64-7321-4148-90C2-D39AB6045CF7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerer le reseau", "Gerer le reseau\Gerer le reseau.csproj", "{2FD1AADD-EF0F-45DB-AEC1-1720D8FEE166}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bibliothèque accès serveur", "Bibliothèque accès serveur\Bibliothèque accès serveur.csproj", "{243DF30F-C84B-4DB0-959D-A14CA2912E09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bibliothèque accès serveur", "Bibliothèque accès serveur\Bibliothèque accès serveur.csproj", "{243DF30F-C84B-4DB0-959D-A14CA2912E09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,18 +17,6 @@ Global
 		{C99DFE6A-5281-49BC-97EF-B284840D6B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C99DFE6A-5281-49BC-97EF-B284840D6B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C99DFE6A-5281-49BC-97EF-B284840D6B9D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CDD35259-51DD-4268-B969-E9799FE92575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CDD35259-51DD-4268-B969-E9799FE92575}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CDD35259-51DD-4268-B969-E9799FE92575}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CDD35259-51DD-4268-B969-E9799FE92575}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64ABCC64-7321-4148-90C2-D39AB6045CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64ABCC64-7321-4148-90C2-D39AB6045CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64ABCC64-7321-4148-90C2-D39AB6045CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64ABCC64-7321-4148-90C2-D39AB6045CF7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2FD1AADD-EF0F-45DB-AEC1-1720D8FEE166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FD1AADD-EF0F-45DB-AEC1-1720D8FEE166}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FD1AADD-EF0F-45DB-AEC1-1720D8FEE166}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FD1AADD-EF0F-45DB-AEC1-1720D8FEE166}.Release|Any CPU.Build.0 = Release|Any CPU
 		{243DF30F-C84B-4DB0-959D-A14CA2912E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{243DF30F-C84B-4DB0-959D-A14CA2912E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{243DF30F-C84B-4DB0-959D-A14CA2912E09}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculitineraire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculitineraire.Designer.cs">
+      <DependentUpon>Calculitineraire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GererReseau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GererReseau.Designer.cs">
+      <DependentUpon>GererReseau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Map.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Map.Designer.cs">
+      <DependentUpon>Map.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageDaccueil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +72,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Calculitineraire.resx">
+      <DependentUpon>Calculitineraire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GererReseau.resx">
+      <DependentUpon>GererReseau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Map.resx">
+      <DependentUpon>Map.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PageDaccueil.resx">
       <DependentUpon>PageDaccueil.cs</DependentUpon>
     </EmbeddedResource>
