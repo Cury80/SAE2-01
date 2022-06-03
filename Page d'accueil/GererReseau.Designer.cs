@@ -134,7 +134,9 @@ namespace Gerer_le_reseau
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Name = "GererReseau";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
+            this.Load += new System.EventHandler(this.GererReseau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

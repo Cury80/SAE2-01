@@ -16,5 +16,10 @@ namespace Carte_du_reseau
         {
             InitializeComponent();
         }
+
+        private void Map_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

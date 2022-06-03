@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Carte_du_reseau;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,19 +18,15 @@ namespace Page_d_accueil
             InitializeComponent();
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void PageDaccueil_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmdCarte_Click(object sender, EventArgs e)
+        {
+            Form carte = new Map();
+            carte.ShowDialog();
         }
     }
 }

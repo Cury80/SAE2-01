@@ -37,7 +37,9 @@ namespace Calculateur_d_itinéraire
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Calculitineraire";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
+            this.Load += new System.EventHandler(this.Calculitineraire_Load);
             this.ResumeLayout(false);
 
         }

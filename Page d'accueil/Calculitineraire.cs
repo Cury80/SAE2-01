@@ -16,7 +16,7 @@ namespace Calculateur_d_itinéraire
         ///Déclaration des différentes variables de la classe Calculateur_itineraire
         ///</summary>
 
-        class Calculateur_itineraire
+        /*class Calculateur_itineraire
         {
             private int distance;   //nombre de minutes nessecaire pour aller du départ à l'arrivée
             private int distance_temp;  // distance temporaire qu'on ajoute si c'est la distance la plus courte 
@@ -29,11 +29,11 @@ namespace Calculateur_d_itinéraire
             private int[] itineraire_temp = new int[31];    //liste temporaire jusqu'a ce qu'elle soit validée et copié dans itineraire
             private int point_pivot;    //  point suivant le point précédement visité  
 
-            public Calculateur_itineraire(int, int, int[][]);   //constructeur du calculateur
+            //public Calculateur_itineraire(int, int, int[][]);   //constructeur du calculateur
             public void init_Calculateur(); //initialisateur du constructeur
             public void Calculateur();  //le sous programme du calculateur
             public ~Calculateur_itineraire();
-        }
+        }*/
 
         
         
@@ -43,6 +43,10 @@ namespace Calculateur_d_itinéraire
             InitializeComponent();
         }
 
+        private void Calculitineraire_Load(object sender, EventArgs e)
+        {
+
+        }
 
         ///<summary>
         ///Initialisateur du Calculateur qui prend en paramètres la station de départ, la station d'arrivé et la matrice de graph du réseau
@@ -51,7 +55,7 @@ namespace Calculateur_d_itinéraire
         ///<param name= "arrivee">Station d'arrivée de l'utilisateur</param>
         ///<param name= "matrice">Matrice dans laquelle se trouve le graph du réseau de tram</param>
         ///<returns></returns>
-        public Calculateur_itineraire(int depart, int arrivee, int[][] matrice)
+        /*public Calculateur_itineraire(int depart, int arrivee, int[][] matrice)
         {
             distance = 0;
             distance_temp = 0;
@@ -78,6 +82,9 @@ namespace Calculateur_d_itinéraire
 
         }
 
+        private void Calculitineraire_Load(object sender, EventArgs e)
+        {
 
+        }*/
     }
 }

@@ -16,5 +16,10 @@ namespace Gerer_le_reseau
         {
             InitializeComponent();
         }
+
+        private void GererReseau_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
