@@ -48,6 +48,11 @@ namespace Calculateur_d_itinéraire
 
         }
 
+        private void Calculitineraire_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.OpenForms["PageDaccueil"].Show();
+        }
+
         ///<summary>
         ///Initialisateur du Calculateur qui prend en paramètres la station de départ, la station d'arrivé et la matrice de graph du réseau
         ///<\summary>

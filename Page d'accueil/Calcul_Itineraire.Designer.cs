@@ -1,7 +1,7 @@
 ﻿
-namespace Carte_du_reseau
+namespace Calculateur_d_itinéraire
 {
-    partial class Map
+    partial class Calcul_Itineraire
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -21,8 +21,6 @@ namespace Carte_du_reseau
             base.Dispose(disposing);
         }
 
-
-
         #region Code généré par le Concepteur Windows Form
 
         /// <summary>
@@ -33,17 +31,11 @@ namespace Carte_du_reseau
         {
             this.SuspendLayout();
             // 
-            // Map
+            // Calcul_Itineraire
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Map";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Metram Lille";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Map_FormClosing);
-            this.Load += new System.EventHandler(this.Map_Load);
+            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.Name = "Calcul_Itineraire";
+            this.Load += new System.EventHandler(this.Calcul_Itineraire_Load);
             this.ResumeLayout(false);
 
         }

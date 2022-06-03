@@ -21,5 +21,10 @@ namespace Carte_du_reseau
         {
 
         }
+
+        private void Map_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.OpenForms["PageDaccueil"].Show();
+        }
     }
 }

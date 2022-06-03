@@ -40,9 +40,10 @@ namespace Page_d_accueil
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(171, 70);
+            this.label1.Location = new System.Drawing.Point(256, 108);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(458, 31);
+            this.label1.Size = new System.Drawing.Size(674, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bienvenue sur le réseau Metram Lille";
             // 
@@ -50,53 +51,60 @@ namespace Page_d_accueil
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label2.Location = new System.Drawing.Point(277, 147);
+            this.label2.Location = new System.Drawing.Point(416, 226);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(246, 25);
+            this.label2.Size = new System.Drawing.Size(370, 36);
             this.label2.TabIndex = 1;
             this.label2.Text = "Que souhaitez-vous faire ?";
             // 
             // cmdItinéraire
             // 
             this.cmdItinéraire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmdItinéraire.Location = new System.Drawing.Point(156, 226);
+            this.cmdItinéraire.Location = new System.Drawing.Point(234, 348);
+            this.cmdItinéraire.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdItinéraire.Name = "cmdItinéraire";
-            this.cmdItinéraire.Size = new System.Drawing.Size(187, 54);
+            this.cmdItinéraire.Size = new System.Drawing.Size(280, 83);
             this.cmdItinéraire.TabIndex = 2;
             this.cmdItinéraire.Text = "Rechercher un Itinéraire";
             this.cmdItinéraire.UseVisualStyleBackColor = true;
+            this.cmdItinéraire.Click += new System.EventHandler(this.cmdItinéraire_Click);
             // 
             // cmdCarte
             // 
             this.cmdCarte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmdCarte.Location = new System.Drawing.Point(458, 226);
+            this.cmdCarte.Location = new System.Drawing.Point(687, 348);
+            this.cmdCarte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdCarte.Name = "cmdCarte";
-            this.cmdCarte.Size = new System.Drawing.Size(187, 54);
+            this.cmdCarte.Size = new System.Drawing.Size(280, 83);
             this.cmdCarte.TabIndex = 3;
             this.cmdCarte.Text = "Afficher la carte";
             this.cmdCarte.UseVisualStyleBackColor = true;
-            this.cmdCarte.Click += new System.EventHandler(this.cmdCarte_Click);
+            this.cmdCarte.Click += new System.EventHandler(this.cmdItinéraire_Click);
             // 
             // cmdGerer
             // 
             this.cmdGerer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmdGerer.Location = new System.Drawing.Point(307, 327);
+            this.cmdGerer.Location = new System.Drawing.Point(460, 503);
+            this.cmdGerer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdGerer.Name = "cmdGerer";
-            this.cmdGerer.Size = new System.Drawing.Size(187, 54);
+            this.cmdGerer.Size = new System.Drawing.Size(280, 83);
             this.cmdGerer.TabIndex = 4;
             this.cmdGerer.Text = "Gérer le réseau";
             this.cmdGerer.UseVisualStyleBackColor = true;
+            this.cmdGerer.Click += new System.EventHandler(this.cmdItinéraire_Click);
             // 
             // PageDaccueil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.cmdGerer);
             this.Controls.Add(this.cmdCarte);
             this.Controls.Add(this.cmdItinéraire);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PageDaccueil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";

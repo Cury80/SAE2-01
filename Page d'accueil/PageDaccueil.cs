@@ -23,10 +23,25 @@ namespace Page_d_accueil
 
         }
 
-        private void cmdCarte_Click(object sender, EventArgs e)
+        private void cmdItinéraire_Click(object sender, EventArgs e)
         {
-            Form carte = new Map();
-            carte.ShowDialog();
+            if (sender == cmdItinéraire)
+            {
+                Form Itineraire = new Calculateur_d_itinéraire.Calculitineraire();
+                this.Hide();
+                Itineraire.Show();
+            }else if (sender == cmdCarte)
+            {
+                Form carte = new Map();
+                this.Hide();
+                carte.Show();
+            }else if (sender == cmdGerer)
+            {
+                Form gestion_appli = new Gerer_le_reseau.GererReseau();
+                this.Hide();
+                gestion_appli.Show();
+            }
+
         }
     }
 }
