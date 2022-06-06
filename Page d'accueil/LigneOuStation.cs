@@ -17,6 +17,7 @@ namespace Page_d_accueil
             InitializeComponent();
         }
 
+        int fermeture = 0;
         private void LigneOuStation_Load(object sender, EventArgs e)
         {
 
@@ -26,6 +27,7 @@ namespace Page_d_accueil
         {
             try
             {
+                fermeture++;
                 Form gestion = new Gerer_le_reseau.FrmGererReseau();
                 gestion.Show();
                 this.Dispose();
@@ -42,11 +44,13 @@ namespace Page_d_accueil
         {
             if (sender == cmdLignes)
             {
+                fermeture++;
                 Form lignes = new Page_d_accueil.FrmListeLigne();
                 lignes.Show();
                 this.Dispose();
             }else if (sender == cmdStations)
             {
+                fermeture++;
                 Form station = new Page_d_accueil.FrmListeStation();
                 station.Show();
                 this.Dispose();
@@ -55,7 +59,7 @@ namespace Page_d_accueil
 
         private void FrmLigneOuStation_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (Application.OpenForms.Count == 1)
+            if (fermeture == 0)
             {
                 Application.OpenForms[0].Close();
             }

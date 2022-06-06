@@ -42,7 +42,7 @@ namespace Calculateur_d_itinéraire
         {
             InitializeComponent();
         }
-
+        int fermeture = 0;
         private void Calculitineraire_Load(object sender, EventArgs e)
         {
 
@@ -50,7 +50,21 @@ namespace Calculateur_d_itinéraire
 
         private void Calculitineraire_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.OpenForms["PageDaccueil"].Show();
+            if (fermeture == 0)
+            {
+                Application.OpenForms[0].Close();
+            }
+            
+        }
+
+        private void CmdRetour_Click(object sender, EventArgs e)
+        {
+            if (sender == CmdRetour)
+            {
+                fermeture++;
+                Application.OpenForms[0].Show();
+                this.Close();
+            }
         }
 
         ///<summary>

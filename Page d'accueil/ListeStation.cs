@@ -17,6 +17,7 @@ namespace Page_d_accueil
             InitializeComponent();
         }
 
+        int fermeture = 0;
         private void ListeStation_Load(object sender, EventArgs e)
         {
 
@@ -24,17 +25,29 @@ namespace Page_d_accueil
 
         private void CmdRetour_Click(object sender, EventArgs e)
         {
+            fermeture++;
             if (sender == CmdRetour)
             {
+                
                 Form ligne_station = new Page_d_accueil.FrmLigneOuStation();
                 ligne_station.Show();
                 this.Dispose();
+            }else if (sender == cmdAjouter)
+            {
+                Form ajout_station = new Page_d_accueil.FrmAjoutStation();
+                ajout_station.Show();
+                this.Close();
+            }else if (sender == cmdModifier)
+            {
+                Form modif_station = new Page_d_accueil.FrmModifStation();
+                modif_station.Show();
+                this.Close();
             }
         }
 
         private void FrmListeStation_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (Application.OpenForms.Count == 1)
+            if (fermeture == 0)
             {
                 Application.OpenForms[0].Close();
             }

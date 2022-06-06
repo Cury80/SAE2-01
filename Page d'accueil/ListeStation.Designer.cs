@@ -68,6 +68,7 @@
             this.cmdModifier.TabIndex = 12;
             this.cmdModifier.Text = "Modifier une station";
             this.cmdModifier.UseVisualStyleBackColor = true;
+            this.cmdModifier.Click += new System.EventHandler(this.CmdRetour_Click);
             // 
             // cmdSupprimer
             // 
@@ -79,6 +80,7 @@
             this.cmdSupprimer.TabIndex = 11;
             this.cmdSupprimer.Text = "Supprimer une station";
             this.cmdSupprimer.UseVisualStyleBackColor = true;
+            this.cmdSupprimer.Click += new System.EventHandler(this.CmdRetour_Click);
             // 
             // cmdAjouter
             // 
@@ -90,6 +92,7 @@
             this.cmdAjouter.TabIndex = 10;
             this.cmdAjouter.Text = "Ajouter une station";
             this.cmdAjouter.UseVisualStyleBackColor = true;
+            this.cmdAjouter.Click += new System.EventHandler(this.CmdRetour_Click);
             // 
             // lstLigne
             // 

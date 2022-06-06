@@ -56,6 +56,7 @@
             this.cmdQuitter.TabIndex = 37;
             this.cmdQuitter.Text = "Quitter";
             this.cmdQuitter.UseVisualStyleBackColor = true;
+            this.cmdQuitter.Click += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // lblNom
             // 

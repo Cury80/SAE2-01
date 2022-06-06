@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\Downloads\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Station.cs" />
+    <Compile Include="Lignes.cs" />
     <Compile Include="connexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
