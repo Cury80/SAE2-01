@@ -26,5 +26,19 @@ namespace Carte_du_reseau
         {
             Application.OpenForms["PageDaccueil"].Show();
         }
+
+        private void cmdRetour_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+                Form gestion = new Map();
+                gestion.Show();
+            }
+        }
     }
 }

@@ -20,26 +20,29 @@ namespace Gerer_le_reseau
             
             
         }
-        
 
-        private void button1_Click(object sender, EventArgs e)
+        private void GererReseau_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.OpenForms["PageDaccueil"].Show();
+        }
+
+        private void GererReseau_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdRetour_Click(object sender, EventArgs e)
         {
             try
             {
                 this.Close();
             }
-            catch(Exception ee)
+            catch (Exception ee)
             {
                 MessageBox.Show(ee.Message);
                 Form gestion = new GererReseau();
                 gestion.Show();
             }
-            
-        }
-
-        private void GererReseau_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.OpenForms["PageDaccueil"].Show();
         }
     }
 }
