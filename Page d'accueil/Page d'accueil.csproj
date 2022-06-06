@@ -52,6 +52,48 @@
     <Compile Include="Calculitineraire.Designer.cs">
       <DependentUpon>Calculitineraire.cs</DependentUpon>
     </Compile>
+    <Compile Include="AjoutLigne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutLigne.Designer.cs">
+      <DependentUpon>AjoutLigne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjoutStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutStation.Designer.cs">
+      <DependentUpon>AjoutStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifStation.Designer.cs">
+      <DependentUpon>ModifStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifLigne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifLigne.Designer.cs">
+      <DependentUpon>ModifLigne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeStation.Designer.cs">
+      <DependentUpon>ListeStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeLigne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeLigne.Designer.cs">
+      <DependentUpon>ListeLigne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LigneOuStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LigneOuStation.Designer.cs">
+      <DependentUpon>LigneOuStation.cs</DependentUpon>
+    </Compile>
     <Compile Include="GererReseau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,14 +114,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AjoutLigne.resx">
+      <DependentUpon>AjoutLigne.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calculitineraire.resx">
       <DependentUpon>Calculitineraire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjoutStation.resx">
+      <DependentUpon>AjoutStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifLigne.resx">
+      <DependentUpon>ModifLigne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeStation.resx">
+      <DependentUpon>ListeStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeLigne.resx">
+      <DependentUpon>ListeLigne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GererReseau.resx">
       <DependentUpon>GererReseau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LigneOuStation.resx">
+      <DependentUpon>LigneOuStation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Map.resx">
       <DependentUpon>Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifStation.resx">
+      <DependentUpon>ModifStation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageDaccueil.resx">
       <DependentUpon>PageDaccueil.cs</DependentUpon>

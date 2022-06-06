@@ -30,12 +30,14 @@ namespace Page_d_accueil
                 Form Itineraire = new Calculateur_d_itinéraire.Calculitineraire();
                 this.Hide();
                 Itineraire.Show();
-            }else if (sender == cmdCarte)
+            }
+            else if (sender == cmdCarte)
             {
                 Form carte = new Map();
                 this.Hide();
                 carte.Show();
-            }else if (sender == cmdGerer)
+            }
+            else if (sender == cmdGerer)
             {
                 Form gestion_appli = new Gerer_le_reseau.GererReseau();
                 this.Hide();
