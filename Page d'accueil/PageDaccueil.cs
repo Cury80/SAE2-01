@@ -11,38 +11,38 @@ using System.Windows.Forms;
 
 namespace Page_d_accueil
 {
-    public partial class PageDaccueil : Form
+    public partial class FrmPageDaccueil : Form
     {
-        public PageDaccueil()
+        public FrmPageDaccueil()
         {
             InitializeComponent();
-        }
-
-        private void PageDaccueil_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void cmdItinéraire_Click(object sender, EventArgs e)
         {
             if (sender == cmdItinéraire)
             {
-                Form Itineraire = new Calculateur_d_itinéraire.Calculitineraire();
+                Form Itineraire = new Calculateur_d_itinéraire.FrmCalculitineraire();
                 this.Hide();
                 Itineraire.Show();
             }
             else if (sender == cmdCarte)
             {
-                Form carte = new Map();
+                Form carte = new FrmMap();
                 this.Hide();
                 carte.Show();
             }
             else if (sender == cmdGerer)
             {
-                Form gestion_appli = new Gerer_le_reseau.GererReseau();
+                Form gestion_appli = new Gerer_le_reseau.FrmGererReseau();
                 this.Hide();
                 gestion_appli.Show();
             }
+
+        }
+
+        private void FrmPageDaccueil_Load(object sender, EventArgs e)
+        {
 
         }
     }

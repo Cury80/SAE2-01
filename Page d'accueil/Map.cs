@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Carte_du_reseau
 {
-    public partial class Map : Form
+    public partial class FrmMap : Form
     {
-        public Map()
+        public FrmMap()
         {
             InitializeComponent();
         }
@@ -36,9 +36,14 @@ namespace Carte_du_reseau
             catch (Exception ee)
             {
                 MessageBox.Show(ee.Message);
-                Form gestion = new Map();
+                Form gestion = new FrmMap();
                 gestion.Show();
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

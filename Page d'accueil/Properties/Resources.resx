@@ -121,13 +121,16 @@
   <data name="plan_metro_lille1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plan_metro_lille.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="plan_metro_lille(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plan_metro_lille(1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="plan_metro_lille" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ressource\plan_metro_lille.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ressource\icone.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plan_metro_lille(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plan_metro_lille(1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fleche_bouton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ressource\fleche_bouton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Calculateur_d_itinéraire
 {
-    public partial class Calculitineraire : Form
+    public partial class FrmCalculitineraire : Form
     {
         ///<summary>
         ///Déclaration des différentes variables de la classe Calculateur_itineraire
@@ -38,7 +38,7 @@ namespace Calculateur_d_itinéraire
         
         
 
-        public Calculitineraire()
+        public FrmCalculitineraire()
         {
             InitializeComponent();
         }

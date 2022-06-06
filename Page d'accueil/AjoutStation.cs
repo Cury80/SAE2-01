@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace Page_d_accueil
 {
-    public partial class Form1 : Form
+    public partial class FrmAjoutStation : Form
     {
-        public Form1()
+        public FrmAjoutStation()
         {
             InitializeComponent();
+        }
+
+        private void FrmAjoutStation_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms.Count == 1)
+            {
+                Application.OpenForms[0].Close();
+            }
         }
     }
 }

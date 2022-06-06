@@ -63,6 +63,16 @@ namespace Page_d_accueil.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fleche_bouton {
+            get {
+                object obj = ResourceManager.GetObject("fleche_bouton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icone {
             get {
                 object obj = ResourceManager.GetObject("icone", resourceCulture);

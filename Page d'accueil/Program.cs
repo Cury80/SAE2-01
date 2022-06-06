@@ -16,7 +16,7 @@ namespace Page_d_accueil
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PageDaccueil());
+            Application.Run(new FrmPageDaccueil());
         }
     }
 }

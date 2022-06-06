@@ -1,7 +1,7 @@
 ﻿
 namespace Page_d_accueil
 {
-    partial class PageDaccueil
+    partial class FrmPageDaccueil
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -94,7 +94,7 @@ namespace Page_d_accueil
             this.cmdGerer.UseVisualStyleBackColor = true;
             this.cmdGerer.Click += new System.EventHandler(this.cmdItinéraire_Click);
             // 
-            // PageDaccueil
+            // FrmPageDaccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,10 +105,10 @@ namespace Page_d_accueil
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "PageDaccueil";
+            this.Name = "FrmPageDaccueil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
-            this.Load += new System.EventHandler(this.PageDaccueil_Load);
+            this.Load += new System.EventHandler(this.FrmPageDaccueil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
