@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstLigne = new System.Windows.Forms.ListBox();
             this.cmdAjouter = new System.Windows.Forms.Button();
             this.cmdSupprimer = new System.Windows.Forms.Button();
             this.cmdModifier = new System.Windows.Forms.Button();
@@ -38,20 +37,11 @@
             this.lblDernier = new System.Windows.Forms.Label();
             this.lblType = new System.Windows.Forms.Label();
             this.CmdRetour = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.LblNom_panel = new System.Windows.Forms.Label();
+            this.LblType_transport_panel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lstLigne
-            // 
-            this.lstLigne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lstLigne.FormattingEnabled = true;
-            this.lstLigne.ItemHeight = 25;
-            this.lstLigne.Items.AddRange(new object[] {
-            "Metro Ligne 1"});
-            this.lstLigne.Location = new System.Drawing.Point(12, 68);
-            this.lstLigne.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lstLigne.Name = "lstLigne";
-            this.lstLigne.Size = new System.Drawing.Size(653, 579);
-            this.lstLigne.TabIndex = 0;
             // 
             // cmdAjouter
             // 
@@ -156,11 +146,49 @@
             this.CmdRetour.UseVisualStyleBackColor = true;
             this.CmdRetour.Click += new System.EventHandler(this.CmdRetour_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 341F));
+            this.tableLayoutPanel1.Controls.Add(this.LblNom_panel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.LblType_transport_panel, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 80);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.70548F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.29452F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(576, 584);
+            this.tableLayoutPanel1.TabIndex = 10;
+            // 
+            // LblNom_panel
+            // 
+            this.LblNom_panel.AutoSize = true;
+            this.LblNom_panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.LblNom_panel.Location = new System.Drawing.Point(3, 0);
+            this.LblNom_panel.Name = "LblNom_panel";
+            this.LblNom_panel.Size = new System.Drawing.Size(146, 25);
+            this.LblNom_panel.TabIndex = 11;
+            this.LblNom_panel.Text = "Nom de la ligne";
+            this.LblNom_panel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LblType_transport_panel
+            // 
+            this.LblType_transport_panel.AutoSize = true;
+            this.LblType_transport_panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.LblType_transport_panel.Location = new System.Drawing.Point(238, 0);
+            this.LblType_transport_panel.Name = "LblType_transport_panel";
+            this.LblType_transport_panel.Size = new System.Drawing.Size(165, 25);
+            this.LblType_transport_panel.TabIndex = 12;
+            this.LblType_transport_panel.Text = "Type de transport";
+            this.LblType_transport_panel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmListeLigne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.CmdRetour);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.lblDernier);
@@ -170,21 +198,20 @@
             this.Controls.Add(this.cmdModifier);
             this.Controls.Add(this.cmdSupprimer);
             this.Controls.Add(this.cmdAjouter);
-            this.Controls.Add(this.lstLigne);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmListeLigne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmListeLigne_FormClosed);
-            this.Load += new System.EventHandler(this.ListeLigne_Load);
+            this.Load += new System.EventHandler(this.FrmListeLigne_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstLigne;
         private System.Windows.Forms.Button cmdAjouter;
         private System.Windows.Forms.Button cmdSupprimer;
         private System.Windows.Forms.Button cmdModifier;
@@ -194,5 +221,8 @@
         private System.Windows.Forms.Label lblDernier;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.Button CmdRetour;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label LblNom_panel;
+        private System.Windows.Forms.Label LblType_transport_panel;
     }
 }

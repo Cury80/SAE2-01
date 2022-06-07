@@ -15,7 +15,7 @@ namespace Bibliothèque_accès
 
         public static bool initConnexion()
         {
-            string serveur = "10.1.139.235";
+            string serveur = "10.1.139.236";
             string login = "f5";
             string passwd = "mdp";
             string BD = "basef5";

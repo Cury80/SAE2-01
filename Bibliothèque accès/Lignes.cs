@@ -8,33 +8,32 @@ namespace Bibliothèque_accès
 {
     public class Lignes
     {
-
-        public string nom_ligne
+        public string Nom_ligne
         {
             get
             {
-                return nom_ligne;
+                return Nom_ligne;
             }
         }
 
-        public string frequence
+        public string Frequence
         {
-            get { return frequence; }
+            get { return Frequence; }
         }
 
-        public string heure_depart
+        public string Heure_depart
         {
-            get { return heure_depart; }
+            get { return Heure_depart; }
         }
 
-        public string heure_dernier_passage
+        public string Heure_dernier_passage
         {
-            get { return heure_dernier_passage; }
+            get { return Heure_dernier_passage; }
         }
 
-        public int type
+        public int Type
         {
-            get { return type; }
+            get { return Type; }
         }
     }
 }

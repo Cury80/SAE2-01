@@ -34,6 +34,7 @@ namespace Page_d_accueil
             this.cmdItinéraire = new System.Windows.Forms.Button();
             this.cmdCarte = new System.Windows.Forms.Button();
             this.cmdGerer = new System.Windows.Forms.Button();
+            this.LblConnexion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -94,11 +95,21 @@ namespace Page_d_accueil
             this.cmdGerer.UseVisualStyleBackColor = true;
             this.cmdGerer.Click += new System.EventHandler(this.cmdItinéraire_Click);
             // 
+            // LblConnexion
+            // 
+            this.LblConnexion.AutoSize = true;
+            this.LblConnexion.Location = new System.Drawing.Point(12, 9);
+            this.LblConnexion.Name = "LblConnexion";
+            this.LblConnexion.Size = new System.Drawing.Size(221, 20);
+            this.LblConnexion.TabIndex = 5;
+            this.LblConnexion.Text = "Etat de la connexion à la base";
+            // 
             // FrmPageDaccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.LblConnexion);
             this.Controls.Add(this.cmdGerer);
             this.Controls.Add(this.cmdCarte);
             this.Controls.Add(this.cmdItinéraire);
@@ -108,6 +119,7 @@ namespace Page_d_accueil
             this.Name = "FrmPageDaccueil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPageDaccueil_FormClosing);
             this.Load += new System.EventHandler(this.FrmPageDaccueil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -121,6 +133,7 @@ namespace Page_d_accueil
         private System.Windows.Forms.Button cmdItinéraire;
         private System.Windows.Forms.Button cmdCarte;
         private System.Windows.Forms.Button cmdGerer;
+        private System.Windows.Forms.Label LblConnexion;
     }
 }
 

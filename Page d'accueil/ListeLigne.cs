@@ -12,6 +12,7 @@ namespace Page_d_accueil
 {
     public partial class FrmListeLigne : Form
     {
+        List<Bibliothèque_accès.Lignes> liste_lignes;
         
         public FrmListeLigne()
         {
@@ -19,11 +20,6 @@ namespace Page_d_accueil
         }
 
         int fermeture = 0;
-
-        private void ListeLigne_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void CmdRetour_Click(object sender, EventArgs e)
         {
@@ -53,6 +49,41 @@ namespace Page_d_accueil
             {
                 Application.OpenForms[0].Close();
             }
+        }
+
+        private void FrmListeLigne_Load(object sender, EventArgs e)
+        {
+            int ligne_panel = 0;
+            liste_lignes = Bibliothèque_accès.BDD.Lecture_Ligne();
+            foreach (Bibliothèque_accès.Lignes lignes in liste_lignes)
+            {
+                ligne_panel++;
+                Ajout_label(lignes.Nom_ligne, 0, ligne_panel);
+                Ajout_label(lignes.Type.ToString(), 0, ligne_panel);
+            }
+        }
+
+        private void Ajout_label(string nom_ligne, int nb_ligne, int colonne)
+        {
+            Label lbl = new Label();
+            lbl.AutoSize = false;
+            lbl.Size = LblType_transport_panel.Size;
+            lbl.Font = new Font(LblType_transport_panel.Font, FontStyle.Regular);
+            lbl.TextAlign = ContentAlignment.MiddleCenter;
+            if ( nom_ligne.ToString() == "1")
+            {
+                lbl.Text = "Tramway";
+            }else if ( nom_ligne.ToString() == "2")
+            {
+                lbl.Text = "Métro";
+            }
+            else
+            {
+                lbl.Text = nom_ligne;
+            }
+           
+
+            tableLayoutPanel1.Controls.Add(lbl, nb_ligne, colonne);
         }
     }
 }
