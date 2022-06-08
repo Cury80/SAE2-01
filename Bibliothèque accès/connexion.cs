@@ -64,7 +64,6 @@ namespace Bibliothèque_accès
             try
             {
                 cmd1.ExecuteNonQuery();
-                MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             }
             catch (Exception erreur)
             {
@@ -76,9 +75,19 @@ namespace Bibliothèque_accès
 
         public static bool Ajout_station(string nom_station)
         {
+            bool reponse = true;
             string sql = $"insert into Station (nomstation) values ('{nom_station}')";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
-            return true;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception erreur)
+            {
+                Debug.Print(erreur.Message);
+                reponse = false;
+            }
+            return reponse;
         }
 
         public static bool Supp_ligne(string nom_ligne) { 
@@ -115,9 +124,11 @@ namespace Bibliothèque_accès
                 }
                 rdr.Close();
                 cmd.Dispose();
+                Debug.Print("On est entré dans la boucle");
             }
             catch (Exception er)
             {
+                Debug.Print("On rentre pas dedans : ");
                 Debug.Print(er.Message);
                 
             }
