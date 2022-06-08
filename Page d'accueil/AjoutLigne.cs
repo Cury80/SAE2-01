@@ -74,7 +74,7 @@ namespace Page_d_accueil
                 {
                     fermeture++;
                     
-                    bool cmd = BDD.Ajout_ligne(txtNom.Text, txtFrequence.Text, txtDépart.Text, txtDernier.Text, numero_type);
+                    bool cmd = BDD.Ajout_ligne(txtNom.Text, TimeSpan.Parse(txtFrequence.Text), TimeSpan.Parse(txtDépart.Text), TimeSpan.Parse(txtDernier.Text), numero_type);
                     if (cmd == true)
                     {
                         MessageBox.Show("Ajout réussi", "Ajout ligne");

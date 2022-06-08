@@ -53,13 +53,15 @@ namespace Bibliothèque_accès
             }
         }
 
-        public static bool Ajout_ligne(string nom, string frequence, string heure_depart, string heure_dernier_passage, int type)
+        public static bool Ajout_ligne(string nom, TimeSpan frequence, TimeSpan heure_depart, TimeSpan heure_dernier_passage, int type)
         {
-            bool reponse = true;
+            bool reponse = true; //N_Ligne, NomLigne, Fréquence, HeureDeDépart, HeureDeDernierPassage, N_Type)
+
+            string sql = $"INSERT INTO Ligne VALUES (NULL,'{nom}','{frequence}','{heure_depart}','{heure_dernier_passage}',{type})";
+            MySqlCommand cmd1 = new MySqlCommand(sql, maCnx);
             try
             {
-                string sql = $"INSERT INTO ligne VALUES ('{nom}', '{frequence}', '{heure_depart}', '{heure_dernier_passage}', '{type}')";
-                MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+                cmd1.ExecuteNonQuery();
             }
             catch (Exception erreur)
             {
@@ -71,21 +73,21 @@ namespace Bibliothèque_accès
 
         public static bool Ajout_station(string nom_station)
         {
-            string sql = $"insert into station (nomstation) values ('{nom_station}')";
+            string sql = $"insert into Station (nomstation) values ('{nom_station}')";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             return true;
         }
 
         public static bool Supp_ligne(string nom_ligne)
         {
-            string sql = $"delete from ligne where nomligne = '{nom_ligne}'";
+            string sql = $"delete from Ligne where nomligne = '{nom_ligne}'";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             return true;
         }
 
         public static bool Supp_station(string nom_station)
         {
-            string sql = $"delete from station where nomstation = '{nom_station}'";
+            string sql = $"delete from Station where nomstation = '{nom_station}'";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             return true;
         }
@@ -94,7 +96,7 @@ namespace Bibliothèque_accès
             
             List<Lignes> liste_lignes = new List<Lignes> ();
 
-            string sql = "select * from ligne";
+            string sql = "select * from Ligne";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
 
             try
@@ -104,11 +106,10 @@ namespace Bibliothèque_accès
                 while (rdr.Read())
                 {
                     string nom = (string)rdr[1];
-                    string frequence = (string)rdr[2];
-                    string heure_depart = (string)rdr[3];
-                    string heure_dernier_passage = (string)rdr[4];
+                    TimeSpan frequence = (TimeSpan)rdr[2];
+                    TimeSpan heure_depart = (TimeSpan)rdr[3];
+                    TimeSpan heure_dernier_passage = (TimeSpan)rdr[4];
                     int type = (int)rdr[5];
-
 
                 }
                 rdr.Close();
@@ -126,7 +127,7 @@ namespace Bibliothèque_accès
         {
             List<Station> liste_stations = new List<Station>();
 
-            string sql = "select * from station";
+            string sql = "select * from Station";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             try
             {
