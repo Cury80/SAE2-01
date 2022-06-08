@@ -103,6 +103,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAjoutStation_FormClosed);
+            this.Load += new System.EventHandler(this.FrmAjoutStation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

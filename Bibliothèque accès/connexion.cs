@@ -55,10 +55,18 @@ namespace Bibliothèque_accès
 
         public static bool Ajout_ligne(string nom, string frequence, string heure_depart, string heure_dernier_passage, int type)
         {
-
-            string sql = $"insert into ligne(nomligne, frequence, heureDeDepart, HeureDeDernierPassage, n_type) values('{nom}', '{frequence}', '{heure_depart}', '{heure_dernier_passage}', '{type}')";
-            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
-            return true;
+            bool reponse = true;
+            try
+            {
+                string sql = $"INSERT INTO ligne VALUES ('{nom}', '{frequence}', '{heure_depart}', '{heure_dernier_passage}', '{type}')";
+                MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+            }
+            catch (Exception erreur)
+            {
+                Debug.Print(erreur.Message);
+                reponse = false;
+            }
+            return reponse;
         }
 
         public static bool Ajout_station(string nom_station)
@@ -109,6 +117,7 @@ namespace Bibliothèque_accès
             catch (Exception er)
             {
                 Debug.Print(er.Message);
+                
             }
             return liste_lignes;
         }

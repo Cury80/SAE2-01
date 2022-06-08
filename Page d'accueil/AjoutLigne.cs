@@ -27,11 +27,6 @@ namespace Page_d_accueil
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmAjoutLigne_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (fermeture == 0)
@@ -40,11 +35,16 @@ namespace Page_d_accueil
             }
         }
 
+
+
+
         private void cmdQuitter_Click(object sender, EventArgs e)
         {
             int nb_erreurs = 0;
             int numero_type = 0;
-            if (sender == cmdQuitter)
+
+
+            if (sender == cmdQuitter)   //si l'utilisateur veut quitter le form actif et revenir en arrière
             {
                 DialogResult message_sortie = MessageBox.Show("Voullez-vous quitter sans sauvegarder ?", "Quitter", MessageBoxButtons.YesNo);
                 if (message_sortie == DialogResult.Yes)
@@ -55,7 +55,7 @@ namespace Page_d_accueil
                     this.Close();
                 }
             }
-            else if (sender == cmdEnregistrer)
+            else if (sender == cmdEnregistrer)  //l'utilisateur veut enregistrer l'ajout d'une ligne
             {
                 if (txtType.Text.ToLower() == "métro")
                 {
@@ -70,10 +70,9 @@ namespace Page_d_accueil
                     errorProvider1.SetError(lblTransport, "Veuillez écrire soit Métro soit Tramway");
                 }
 
-                if (nb_erreurs == 0)
+                if (nb_erreurs == 0)    //vérifie qu'il n'y ait pas d'erreurs avant de sauvegarder 
                 {
                     fermeture++;
-                    //MySqlCommand commande = new MySqlCommand(commande_sql, Aujout_ligne();
                     
                     bool cmd = BDD.Ajout_ligne(txtNom.Text, txtFrequence.Text, txtDépart.Text, txtDernier.Text, numero_type);
                     if (cmd == true)

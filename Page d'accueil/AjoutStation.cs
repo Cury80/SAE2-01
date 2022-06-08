@@ -45,5 +45,10 @@ namespace Page_d_accueil
 
             }
         }
+
+        private void FrmAjoutStation_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
