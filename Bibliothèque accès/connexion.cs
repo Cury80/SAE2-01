@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Runtime;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using MySql.Data;
@@ -59,9 +60,14 @@ namespace Bibliothèque_accès
 
             string sql = $"INSERT INTO Ligne VALUES (NULL,'{nom}','{frequence}','{heure_depart}','{heure_dernier_passage}',{type})";
             MySqlCommand cmd1 = new MySqlCommand(sql, maCnx);
+            bool reponse = true;
+                string sql = $"INSERT INTO Ligne VALUES (null,'{nom}', '{frequence}', '{heure_depart}', '{heure_dernier_passage}', '{type}')";
+                MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             try
             {
                 cmd1.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+                MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             }
             catch (Exception erreur)
             {
@@ -79,7 +85,7 @@ namespace Bibliothèque_accès
         }
 
         public static bool Supp_ligne(string nom_ligne)
-        {
+            string sql = $"delete from Ligne where nomligne = '{nom_ligne}'";
             string sql = $"delete from Ligne where nomligne = '{nom_ligne}'";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             return true;
@@ -106,10 +112,11 @@ namespace Bibliothèque_accès
                 while (rdr.Read())
                 {
                     string nom = (string)rdr[1];
-                    TimeSpan frequence = (TimeSpan)rdr[2];
-                    TimeSpan heure_depart = (TimeSpan)rdr[3];
-                    TimeSpan heure_dernier_passage = (TimeSpan)rdr[4];
+                    string frequence = (string)rdr[2];
+                    string heure_depart = (string)rdr[3];
+                    string heure_dernier_passage = (string)rdr[4];
                     int type = (int)rdr[5];
+
 
                 }
                 rdr.Close();

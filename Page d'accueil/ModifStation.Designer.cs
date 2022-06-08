@@ -33,15 +33,15 @@
             this.lblNom = new System.Windows.Forms.Label();
             this.lblStation = new System.Windows.Forms.Label();
             this.txtNom = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cmdEnregistrer
             // 
             this.cmdEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmdEnregistrer.Location = new System.Drawing.Point(750, 557);
-            this.cmdEnregistrer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdEnregistrer.Location = new System.Drawing.Point(495, 362);
             this.cmdEnregistrer.Name = "cmdEnregistrer";
-            this.cmdEnregistrer.Size = new System.Drawing.Size(162, 75);
+            this.cmdEnregistrer.Size = new System.Drawing.Size(108, 49);
             this.cmdEnregistrer.TabIndex = 43;
             this.cmdEnregistrer.Text = "Enregistrer";
             this.cmdEnregistrer.UseVisualStyleBackColor = true;
@@ -49,10 +49,9 @@
             // cmdQuitter
             // 
             this.cmdQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmdQuitter.Location = new System.Drawing.Point(962, 557);
-            this.cmdQuitter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdQuitter.Location = new System.Drawing.Point(636, 362);
             this.cmdQuitter.Name = "cmdQuitter";
-            this.cmdQuitter.Size = new System.Drawing.Size(162, 75);
+            this.cmdQuitter.Size = new System.Drawing.Size(108, 49);
             this.cmdQuitter.TabIndex = 42;
             this.cmdQuitter.Text = "Quitter";
             this.cmdQuitter.UseVisualStyleBackColor = true;
@@ -62,10 +61,9 @@
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblNom.Location = new System.Drawing.Point(27, 155);
-            this.lblNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNom.Location = new System.Drawing.Point(13, 101);
             this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(64, 25);
+            this.lblNom.Size = new System.Drawing.Size(45, 17);
             this.lblNom.TabIndex = 41;
             this.lblNom.Text = "Nom :";
             // 
@@ -73,32 +71,41 @@
             // 
             this.lblStation.AutoSize = true;
             this.lblStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.lblStation.Location = new System.Drawing.Point(396, 60);
-            this.lblStation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStation.Location = new System.Drawing.Point(245, 39);
             this.lblStation.Name = "lblStation";
-            this.lblStation.Size = new System.Drawing.Size(450, 58);
+            this.lblStation.Size = new System.Drawing.Size(319, 39);
             this.lblStation.TabIndex = 40;
-            this.lblStation.Text = "Ajouter une Station";
+            this.lblStation.Text = "Modifier une Station";
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(104, 155);
-            this.txtNom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNom.Location = new System.Drawing.Point(64, 101);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(1068, 26);
+            this.txtNom.Size = new System.Drawing.Size(713, 20);
             this.txtNom.TabIndex = 39;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "metro",
+            "tramway"});
+            this.comboBox1.Location = new System.Drawing.Point(338, 222);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(356, 21);
+            this.comboBox1.TabIndex = 44;
             // 
             // FrmModifStation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cmdEnregistrer);
             this.Controls.Add(this.cmdQuitter);
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.lblStation);
             this.Controls.Add(this.txtNom);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmModifStation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
@@ -116,5 +123,6 @@
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblStation;
         private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

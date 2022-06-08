@@ -36,10 +36,9 @@
             // cmdLignes
             // 
             this.cmdLignes.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.cmdLignes.Location = new System.Drawing.Point(388, 152);
-            this.cmdLignes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdLignes.Location = new System.Drawing.Point(259, 99);
             this.cmdLignes.Name = "cmdLignes";
-            this.cmdLignes.Size = new System.Drawing.Size(423, 162);
+            this.cmdLignes.Size = new System.Drawing.Size(282, 105);
             this.cmdLignes.TabIndex = 0;
             this.cmdLignes.Text = "Liste des lignes";
             this.cmdLignes.UseVisualStyleBackColor = true;
@@ -48,10 +47,9 @@
             // cmdStations
             // 
             this.cmdStations.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.cmdStations.Location = new System.Drawing.Point(388, 378);
-            this.cmdStations.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdStations.Location = new System.Drawing.Point(259, 246);
             this.cmdStations.Name = "cmdStations";
-            this.cmdStations.Size = new System.Drawing.Size(423, 162);
+            this.cmdStations.Size = new System.Drawing.Size(282, 105);
             this.cmdStations.TabIndex = 1;
             this.cmdStations.Text = "Liste des stations";
             this.cmdStations.UseVisualStyleBackColor = true;
@@ -62,22 +60,22 @@
             this.CmdRetour.FlatAppearance.BorderSize = 0;
             this.CmdRetour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CmdRetour.Image = global::Page_d_accueil.Properties.Resources.fleche_bouton;
-            this.CmdRetour.Location = new System.Drawing.Point(12, 12);
+            this.CmdRetour.Location = new System.Drawing.Point(8, 8);
+            this.CmdRetour.Margin = new System.Windows.Forms.Padding(2);
             this.CmdRetour.Name = "CmdRetour";
-            this.CmdRetour.Size = new System.Drawing.Size(65, 49);
+            this.CmdRetour.Size = new System.Drawing.Size(43, 32);
             this.CmdRetour.TabIndex = 2;
             this.CmdRetour.UseVisualStyleBackColor = true;
             this.CmdRetour.Click += new System.EventHandler(this.CmdRetour_Click);
             // 
             // FrmLigneOuStation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.CmdRetour);
             this.Controls.Add(this.cmdStations);
             this.Controls.Add(this.cmdLignes);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmLigneOuStation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
