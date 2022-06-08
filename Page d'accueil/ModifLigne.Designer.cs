@@ -36,11 +36,11 @@
             this.lblFrequence = new System.Windows.Forms.Label();
             this.lblNom = new System.Windows.Forms.Label();
             this.lblModif = new System.Windows.Forms.Label();
-            this.txtType = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
             this.txtFrequence = new System.Windows.Forms.TextBox();
             this.txtDernier = new System.Windows.Forms.TextBox();
             this.txtDépart = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cmdEnregistrer
@@ -124,13 +124,6 @@
             this.lblModif.TabIndex = 18;
             this.lblModif.Text = "Modifier une ligne";
             // 
-            // txtType
-            // 
-            this.txtType.Location = new System.Drawing.Point(149, 296);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(612, 20);
-            this.txtType.TabIndex = 35;
-            // 
             // txtNom
             // 
             this.txtNom.Location = new System.Drawing.Point(149, 96);
@@ -159,12 +152,23 @@
             this.txtDépart.Size = new System.Drawing.Size(612, 20);
             this.txtDépart.TabIndex = 31;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Métro",
+            "Tramway"});
+            this.comboBox1.Location = new System.Drawing.Point(150, 297);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(611, 21);
+            this.comboBox1.TabIndex = 35;
+            // 
             // FrmModifLigne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtType);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.txtFrequence);
             this.Controls.Add(this.txtDernier);
@@ -181,7 +185,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmModifLigne_FormClosed);
-            
+            this.Load += new System.EventHandler(this.FrmModifLigne_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,10 +201,10 @@
         private System.Windows.Forms.Label lblFrequence;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblModif;
-        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.TextBox txtFrequence;
         private System.Windows.Forms.TextBox txtDernier;
         private System.Windows.Forms.TextBox txtDépart;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

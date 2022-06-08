@@ -91,7 +91,7 @@ namespace Page_d_accueil
         
         private void lstLigne_SelectedValueChanged(object sender, EventArgs e)
         {
-            lblNom.Text = Bibliothèque_accès.BDD.Lecture_NomLigne(lstLigne.SelectedItems.ToString());
+            lblNom.Text = Bibliothèque_accès.BDD.Lecture_NomLigne(lstLigne.SelectedItem.ToString());
             
             
             //lblDepart;

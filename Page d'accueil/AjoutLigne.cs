@@ -57,18 +57,14 @@ namespace Page_d_accueil
             }
             else if (sender == cmdEnregistrer)  //l'utilisateur veut enregistrer l'ajout d'une ligne
             {
-                if (txtType.Text.ToLower() == "métro")
+                if (cmbMetroTramway.Text == "Métro")
                 {
                     numero_type = 2;
-                }else if (txtType.Text.ToLower() == "tramway" || txtType.Text.ToLower() == "tram")
+                }else if (cmbMetroTramway.Text == "Tramway")
                 {
                     numero_type = 1;
                 }
-                else
-                {
-                    nb_erreurs++;
-                    errorProvider1.SetError(lblTransport, "Veuillez écrire soit Métro soit Tramway");
-                }
+                
 
                 if (nb_erreurs == 0)    //vérifie qu'il n'y ait pas d'erreurs avant de sauvegarder 
                 {

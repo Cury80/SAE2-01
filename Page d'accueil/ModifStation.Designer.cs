@@ -33,7 +33,6 @@
             this.lblNom = new System.Windows.Forms.Label();
             this.lblStation = new System.Windows.Forms.Label();
             this.txtNom = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cmdEnregistrer
@@ -84,23 +83,11 @@
             this.txtNom.Size = new System.Drawing.Size(713, 20);
             this.txtNom.TabIndex = 39;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "metro",
-            "tramway"});
-            this.comboBox1.Location = new System.Drawing.Point(338, 222);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(356, 21);
-            this.comboBox1.TabIndex = 44;
-            // 
             // FrmModifStation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cmdEnregistrer);
             this.Controls.Add(this.cmdQuitter);
             this.Controls.Add(this.lblNom);
@@ -123,6 +110,5 @@
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblStation;
         private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -47,5 +47,10 @@ namespace Page_d_accueil
                 }
             }
         }
+
+        private void FrmModifLigne_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
