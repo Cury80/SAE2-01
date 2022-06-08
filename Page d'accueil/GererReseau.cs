@@ -18,11 +18,13 @@ namespace Gerer_le_reseau
             InitializeComponent();
         }
 
-
+        int fermeture = 0;
         private void cmdRetour_Click(object sender, EventArgs e)
         {
             try
             {
+                fermeture = 1;
+                Application.OpenForms[0].Show();
                 this.Close();
             }
             catch (Exception ee)
@@ -42,16 +44,25 @@ namespace Gerer_le_reseau
             {
                 nb_erreurs++;
                 errorProvider1.SetError(TxtPseudo, "Veuillez rentrer votre identifiant");
+            }else if (TxtPseudo.Text != "Admin")
+            {
+                nb_erreurs++;
+                errorProvider1.SetError(TxtPseudo, "Nom d'utilisateur invalide (Admin)");
             }
 
             if (string.IsNullOrEmpty(TxtMdp.Text) == true)
             {
                 nb_erreurs++;
                 errorProvider1.SetError(TxtMdp, "Veuillez rentrer votre mot de passe");
+            }else if (TxtMdp.Text != "Admin")
+            {
+                nb_erreurs++;
+                errorProvider1.SetError(TxtMdp, "Mot de passe incorrect (Admin)");
             }
 
             if (nb_erreurs == 0)
             {
+                fermeture++; ;
                 Form LigneStation = new Page_d_accueil.FrmLigneOuStation();
                 LigneStation.Show();
                 this.Close();
@@ -66,9 +77,9 @@ namespace Gerer_le_reseau
 
         private void FrmGererReseau_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (Application.OpenForms.Count == 1)
+            if (fermeture == 0)
             {
-                Application.OpenForms[0].Show();
+                Application.OpenForms[0].Close();
             }
         }
     }

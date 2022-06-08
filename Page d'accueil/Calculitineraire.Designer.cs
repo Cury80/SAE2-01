@@ -29,13 +29,27 @@ namespace Calculateur_d_itinéraire
         /// </summary>
         private void InitializeComponent()
         {
+            this.CmdRetour = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // CmdRetour
+            // 
+            this.CmdRetour.FlatAppearance.BorderSize = 0;
+            this.CmdRetour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CmdRetour.Image = global::Page_d_accueil.Properties.Resources.fleche_bouton;
+            this.CmdRetour.Location = new System.Drawing.Point(12, 12);
+            this.CmdRetour.Name = "CmdRetour";
+            this.CmdRetour.Size = new System.Drawing.Size(65, 49);
+            this.CmdRetour.TabIndex = 10;
+            this.CmdRetour.UseVisualStyleBackColor = true;
+            this.CmdRetour.Click += new System.EventHandler(this.CmdRetour_Click);
             // 
             // FrmCalculitineraire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.CmdRetour);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmCalculitineraire";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -47,6 +61,8 @@ namespace Calculateur_d_itinéraire
         }
 
         #endregion
+
+        private System.Windows.Forms.Button CmdRetour;
     }
 }
 

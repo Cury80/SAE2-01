@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using Bibliothèque_accès;
 
 namespace Page_d_accueil
 {
@@ -17,44 +20,42 @@ namespace Page_d_accueil
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        int fermeture = 0;
 
         private void AjoutLigne_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmAjoutLigne_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (Application.OpenForms.Count == 1)
+            if (fermeture == 0)
             {
                 Application.OpenForms[0].Close();
             }
         }
 
+
+
+
         private void cmdQuitter_Click(object sender, EventArgs e)
         {
             int nb_erreurs = 0;
             int numero_type = 0;
-            if (sender == cmdQuitter)
+
+
+            if (sender == cmdQuitter)   //si l'utilisateur veut quitter le form actif et revenir en arrière
             {
-                Form liste_ligne = new Page_d_accueil.FrmListeLigne();
-                liste_ligne.Show();
-                this.Close();
-            }else if (sender == cmdEnregistrer)
+                DialogResult message_sortie = MessageBox.Show("Voullez-vous quitter sans sauvegarder ?", "Quitter", MessageBoxButtons.YesNo);
+                if (message_sortie == DialogResult.Yes)
+                {
+                    fermeture++;
+                    Form liste_lignes = new Page_d_accueil.FrmListeLigne();
+                    liste_lignes.Show();
+                    this.Close();
+                }
+            }
+            else if (sender == cmdEnregistrer)  //l'utilisateur veut enregistrer l'ajout d'une ligne
             {
                 if (txtType.Text.ToLower() == "métro")
                 {
@@ -69,9 +70,22 @@ namespace Page_d_accueil
                     errorProvider1.SetError(lblTransport, "Veuillez écrire soit Métro soit Tramway");
                 }
 
-                if (nb_erreurs == 0)
+                if (nb_erreurs == 0)    //vérifie qu'il n'y ait pas d'erreurs avant de sauvegarder 
                 {
-                    //string commande_sql = $"insert into ligne (nomligne, frequence, heureDeDepart, HeureDeDernierPassage, n_type) values ('{txtNom.Text}', '{txtFrequence.Text}', '{lblDepart.Text}', '{lblDernier.Text}', '{lblTransport.Text}')";
+                    fermeture++;
+                    
+                    bool cmd = BDD.Ajout_ligne(txtNom.Text, txtFrequence.Text, txtDépart.Text, txtDernier.Text, numero_type);
+                    if (cmd == true)
+                    {
+                        MessageBox.Show("Ajout réussi", "Ajout ligne");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur dans l'ajout de la ligne", "Erreur");
+                    }
+                    Form liste_ligne = new Page_d_accueil.FrmListeLigne();
+                    liste_ligne.Show();
+                    this.Close();
                 }
             }
         }

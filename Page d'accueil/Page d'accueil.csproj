@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\Downloads\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -184,6 +187,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ressource\fleche_bouton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bibliothèque accès\Bibliothèque accès.csproj">
+      <Project>{5f84542e-ab32-4da7-8a5e-1f80648284e3}</Project>
+      <Name>Bibliothèque accès</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

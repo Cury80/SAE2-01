@@ -38,12 +38,33 @@ namespace Page_d_accueil
                 this.Hide();
                 gestion_appli.Show();
             }
-
         }
 
         private void FrmPageDaccueil_Load(object sender, EventArgs e)
         {
+            bool connexion = Bibliothèque_accès.BDD.initConnexion();
+            if (connexion == true)
+            {
+                LblConnexion.Text = "Connexion au serveur réussie";
 
+            }
+            else
+            {
+                LblConnexion.Text = "Echec de la connexion à la base";
+            }
+        }
+
+        private void FrmPageDaccueil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bool fermeture = Bibliothèque_accès.BDD.FermerConnexion();
+            if (fermeture == true)
+            {
+                MessageBox.Show("Déconnexion réussi à la base", "Fermeture");
+            }
+            else
+            {
+                MessageBox.Show("Echech de la deconnexion");
+            }
         }
     }
 }

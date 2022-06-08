@@ -56,7 +56,6 @@
             this.label1.Size = new System.Drawing.Size(400, 58);
             this.label1.TabIndex = 5;
             this.label1.Text = "Ajouter une ligne";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cmdEnregistrer
             // 
@@ -144,6 +143,7 @@
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(916, 26);
             this.txtType.TabIndex = 30;
+            this.txtType.Validated += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // txtNom
             // 
@@ -152,6 +152,7 @@
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(916, 26);
             this.txtNom.TabIndex = 29;
+            this.txtNom.Validated += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // txtFrequence
             // 
@@ -160,6 +161,7 @@
             this.txtFrequence.Name = "txtFrequence";
             this.txtFrequence.Size = new System.Drawing.Size(916, 26);
             this.txtFrequence.TabIndex = 28;
+            this.txtFrequence.Validated += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // txtDernier
             // 
@@ -168,6 +170,7 @@
             this.txtDernier.Name = "txtDernier";
             this.txtDernier.Size = new System.Drawing.Size(916, 26);
             this.txtDernier.TabIndex = 27;
+            this.txtDernier.Validated += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // txtDépart
             // 
@@ -176,6 +179,7 @@
             this.txtDépart.Name = "txtDépart";
             this.txtDépart.Size = new System.Drawing.Size(916, 26);
             this.txtDépart.TabIndex = 26;
+            this.txtDépart.Validated += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // errorProvider1
             // 

@@ -15,7 +15,9 @@ namespace Carte_du_reseau
         public FrmMap()
         {
             InitializeComponent();
+            
         }
+        int fermeture = 0;
 
         private void Map_Load(object sender, EventArgs e)
         {
@@ -24,14 +26,21 @@ namespace Carte_du_reseau
 
         private void Map_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.OpenForms["PageDaccueil"].Show();
+            if (fermeture % 2 == 0)
+            {
+                Application.OpenForms[0].Close();
+            }
+            
+
         }
 
         private void cmdRetour_Click(object sender, EventArgs e)
         {
             try
             {
+                fermeture++;
                 this.Close();
+                Application.OpenForms[0].Show();
             }
             catch (Exception ee)
             {

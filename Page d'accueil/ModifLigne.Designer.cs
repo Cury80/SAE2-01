@@ -62,6 +62,7 @@
             this.cmdQuitter.TabIndex = 24;
             this.cmdQuitter.Text = "Quitter";
             this.cmdQuitter.UseVisualStyleBackColor = true;
+            this.cmdQuitter.Click += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // lblTransport
             // 
@@ -177,6 +178,7 @@
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.lblModif);
             this.Name = "FrmModifLigne";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmModifLigne_FormClosed);
             this.Load += new System.EventHandler(this.FrmModifLigne_Load);

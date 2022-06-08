@@ -54,6 +54,7 @@
             this.cmdQuitter.TabIndex = 37;
             this.cmdQuitter.Text = "Quitter";
             this.cmdQuitter.UseVisualStyleBackColor = true;
+            this.cmdQuitter.Click += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // lblNom
             // 
@@ -96,6 +97,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAjoutStation_FormClosed);
+            this.Load += new System.EventHandler(this.FrmAjoutStation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
