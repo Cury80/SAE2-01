@@ -92,12 +92,10 @@ namespace Page_d_accueil
         private void lstLigne_SelectedValueChanged(object sender, EventArgs e)
         {
             lblNom.Text = Bibliothèque_accès.BDD.Lecture_NomLigne(lstLigne.SelectedItem.ToString());
-            
-            
-            //lblDepart;
-            //lblFrequence;
-            //lblDernier;
-            //lblType
+            lblFrequence.Text = Bibliothèque_accès.BDD.Lecture_frequence(lstLigne.SelectedItem.ToString());
+            lblDepart.Text = Bibliothèque_accès.BDD.Lecture_depart(lstLigne.SelectedItem.ToString());
+            lblDernier.Text = Bibliothèque_accès.BDD.Lecture_heureDernierDepart(lstLigne.SelectedItem.ToString());
+            lblType.Text = Bibliothèque_accès.BDD.Lecture_TypeTransport(lstLigne.SelectedItem.ToString());
         }
     }
 }

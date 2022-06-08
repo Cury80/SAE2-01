@@ -84,13 +84,10 @@ namespace Page_d_accueil
                         liste_ligne.Show();
                         this.Close();
                     }
-                    catch (Exception erreur)
+                    catch (Exception)
                     {
                         MessageBox.Show("Erreur dans l'entrée des valeurs, Pour la fréquence, heure de départ et heure de dernier passage veuillez mettre en format hh:mm:ss", "Message");
                     }
-
-
-                   
                 }
             }
         }

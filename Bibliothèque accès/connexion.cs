@@ -236,9 +236,133 @@ namespace Bibliothèque_accès
 
         }
 
-        /*public static List<TimeSpan> Lecture_frequence(string nom_ligne)
+        public static string Lecture_frequence(string nom_ligne)
         {
+            List<string> listeFrequence = new List<string>();
+            string frequence;
+            string sql = $"select Fréquence FROM Ligne WHERE NomLigne = '{nom_ligne}'";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
 
-        }*/
+            try
+            {
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+
+                while (rdr.Read())
+                {
+                    frequence = Convert.ToString((TimeSpan)rdr[0]);
+
+                    listeFrequence.Add(frequence);
+                }
+
+                rdr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception er)
+            {
+                Debug.Print(er.Message);
+            }
+
+            frequence = listeFrequence[0];
+
+            return frequence;
+        }
+
+        public static string Lecture_depart(string nom_ligne)
+        {
+            List<string> listeDepart = new List<string>();
+            string depart;
+            string sql = $"select HeureDeDépart FROM Ligne WHERE NomLigne = '{nom_ligne}'";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+
+            try
+            {
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+
+                while (rdr.Read())
+                {
+                    depart = Convert.ToString((TimeSpan)rdr[0]);
+
+                    listeDepart.Add(depart);
+                }
+
+                rdr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception er)
+            {
+                Debug.Print(er.Message);
+            }
+
+            depart = listeDepart[0];
+
+            return depart;
+        }
+
+        public static string Lecture_heureDernierDepart(string nom_ligne)
+        {
+            List<string> listeHeureDernierDepart = new List<string>();
+            string HeureDernierDepart;
+            string sql = $"select HeureDeDernierPassage FROM Ligne WHERE NomLigne = '{nom_ligne}'";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+
+            try
+            {
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+
+                while (rdr.Read())
+                {
+                    HeureDernierDepart = Convert.ToString((TimeSpan)rdr[0]);
+
+                    listeHeureDernierDepart.Add(HeureDernierDepart);
+                }
+
+                rdr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception er)
+            {
+                Debug.Print(er.Message);
+            }
+
+            HeureDernierDepart = listeHeureDernierDepart[0];
+
+            return HeureDernierDepart;
+        }
+
+        public static string Lecture_TypeTransport(string nom)
+        {
+            List<string> listeTypeTransport = new List<string>();
+            string TypeTransport;
+            string sql = $"select NomType FROM Type, Ligne WHERE Type.N_Type = Ligne.N_Type and NomLigne = '{nom}'";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+
+            try
+            {
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+
+                while (rdr.Read())
+                {
+                    TypeTransport = (string)rdr[0];
+
+                    listeTypeTransport.Add(TypeTransport);
+                }
+
+                rdr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception er)
+            {
+                Debug.Print(er.Message);
+            }
+
+            TypeTransport = listeTypeTransport[0];
+
+            return TypeTransport;
+
+        }
     }
 }
