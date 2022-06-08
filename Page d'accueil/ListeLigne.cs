@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,26 +23,24 @@ namespace Page_d_accueil
 
         private void CmdRetour_Click(object sender, EventArgs e)
         {
-            fermeture = 1;
+            fermeture++;
             if (sender == CmdRetour)
             {
                 Form ligne_station = new Page_d_accueil.FrmLigneOuStation();
                 ligne_station.Show();
-                this.Dispose();
+                this.Close();
             }
             else if (sender == cmdAjouter)
             {
                 Form ajout_ligne = new Page_d_accueil.FrmAjoutLigne();
-                ajout_ligne.Show();
-                this.Dispose();
+                ajout_ligne.ShowDialog();
             }
             else if (sender == cmdModifier)
             {
                 Form modif_ligne = new Page_d_accueil.FrmModifLigne();
                 modif_ligne.Owner = this;
-                modif_ligne.Show();
+                modif_ligne.ShowDialog();
                 //string ligne_focus = lstLigne.SelectedValue.ToString();
-                this.Hide();
             }
             else if (sender == cmdSupprimer)
             {
@@ -49,6 +48,7 @@ namespace Page_d_accueil
                 string nomLigne;
                 nomLigne = lstLigne.SelectedItem.ToString();
                 reponse = Bibliothèque_accès.BDD.Supp_ligne(nomLigne);
+
                 if (reponse == true)
                 {
                     lstLigne.Items.Clear();
@@ -68,6 +68,7 @@ namespace Page_d_accueil
             }
         }
 
+
         private void FrmListeLigne_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (fermeture == 0)
@@ -76,26 +77,33 @@ namespace Page_d_accueil
             }
         }
 
+        private void lstLigne_SelectedValueChanged(object sender, EventArgs e)
+        { 
+
+            if (lstLigne.SelectedItem != null)
+            {
+                lblNom.Text = $"Nom : {Bibliothèque_accès.BDD.Lecture_NomLigne(lstLigne.SelectedItem.ToString())}";
+                lblFrequence.Text = $"Fréquence : {Bibliothèque_accès.BDD.Lecture_frequence(lstLigne.SelectedItem.ToString())}";
+                lblDepart.Text = $"Départ : {Bibliothèque_accès.BDD.Lecture_depart(lstLigne.SelectedItem.ToString())}";
+                lblDernier.Text = $"Dernier Passage : {Bibliothèque_accès.BDD.Lecture_heureDernierDepart(lstLigne.SelectedItem.ToString())}";
+                lblType.Text = $"Type Transport : {Bibliothèque_accès.BDD.Lecture_TypeTransport(lstLigne.SelectedItem.ToString())}";
+            }
+           
+        }
+
         List<string> lecteurListe;
 
-        private void FrmListeLigne_Load(object sender, EventArgs e)
+        private void FrmListeLigne_Activated(object sender, EventArgs e)
         {
+            fermeture = 0;
+
             lecteurListe = Bibliothèque_accès.BDD.Lecture_Ligne();
-            
-            foreach(string ligne in lecteurListe)
+            lstLigne.Items.Clear();
+
+            foreach (string ligne in lecteurListe)
             {
                 lstLigne.Items.Add(ligne);
             }
-        }
-
-        
-        private void lstLigne_SelectedValueChanged(object sender, EventArgs e)
-        {
-            lblNom.Text = Bibliothèque_accès.BDD.Lecture_NomLigne(lstLigne.SelectedItem.ToString());
-            lblFrequence.Text = Bibliothèque_accès.BDD.Lecture_frequence(lstLigne.SelectedItem.ToString());
-            lblDepart.Text = Bibliothèque_accès.BDD.Lecture_depart(lstLigne.SelectedItem.ToString());
-            lblDernier.Text = Bibliothèque_accès.BDD.Lecture_heureDernierDepart(lstLigne.SelectedItem.ToString());
-            lblType.Text = Bibliothèque_accès.BDD.Lecture_TypeTransport(lstLigne.SelectedItem.ToString());
         }
     }
 }

@@ -102,7 +102,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAjoutStation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Metram Lille";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAjoutStation_FormClosed);
             this.Load += new System.EventHandler(this.FrmAjoutStation_Load);
             this.ResumeLayout(false);

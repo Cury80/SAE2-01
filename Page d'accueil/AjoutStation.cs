@@ -35,8 +35,6 @@ namespace Page_d_accueil
                 if (message_sortie == DialogResult.Yes)
                 {
                     fermeture++;
-                    Form liste_station = new Page_d_accueil.FrmListeStation();
-                    liste_station.Show();
                     this.Close();
                 }
                 
@@ -54,8 +52,6 @@ namespace Page_d_accueil
                 {
                     MessageBox.Show("Echec de l'ajout de la station ", "Message système");
                 }
-                Form liste_Station = new Page_d_accueil.FrmListeStation();
-                liste_Station.Show();
                 this.Close();
             }
         }

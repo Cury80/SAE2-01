@@ -19,11 +19,6 @@ namespace Page_d_accueil
 
         int fermeture = 0;
 
-        private void FrmModifLigne_Load(object sender, EventArgs e, FrmListeLigne frmListeLigne)
-        {
-            Form ListeLigne = (Form)this.Owner;
-            txtNom.Text = frmListeLigne.lblNom.Text;
-        }
 
         private void FrmModifLigne_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -41,8 +36,6 @@ namespace Page_d_accueil
                 if (message_sortie == DialogResult.Yes)
                 {
                     fermeture++;
-                    Form liste_lignes = new Page_d_accueil.FrmListeLigne();
-                    liste_lignes.Show();
                     this.Close();
                 }
             }
@@ -50,7 +43,8 @@ namespace Page_d_accueil
 
         private void FrmModifLigne_Load(object sender, EventArgs e)
         {
-
+            Form ListeLigne = (Form)this.Owner;
+            
         }
     }
 }

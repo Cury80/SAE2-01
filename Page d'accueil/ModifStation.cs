@@ -38,8 +38,6 @@ namespace Page_d_accueil
             if (message_sortie == DialogResult.Yes)
             {
                 fermeture++;
-                Form liste_station = new Page_d_accueil.FrmListeStation();
-                liste_station.Show();
                 this.Close();
             }
         }

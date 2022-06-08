@@ -50,19 +50,22 @@ namespace Page_d_accueil
                 if (message_sortie == DialogResult.Yes)
                 {
                     fermeture++;
-                    Form liste_lignes = new Page_d_accueil.FrmListeLigne();
-                    liste_lignes.Show();
                     this.Close();
                 }
             }
             else if (sender == cmdEnregistrer)  //l'utilisateur veut enregistrer l'ajout d'une ligne
             {
+                
                 if (cmbMetroTramway.Text == "Métro")
                 {
                     numero_type = 2;
                 }else if (cmbMetroTramway.Text == "Tramway")
                 {
                     numero_type = 1;
+                }
+                else
+                {
+                    errorProvider1.SetError(cmbMetroTramway, "Veuillez choisir entre Métro et Tramway");
                 }
                 
 
@@ -80,8 +83,6 @@ namespace Page_d_accueil
                         {
                             MessageBox.Show("Erreur dans l'ajout de la ligne", "Erreur");
                         }
-                        Form liste_ligne = new Page_d_accueil.FrmListeLigne();
-                        liste_ligne.Show();
                         this.Close();
                     }
                     catch (Exception)
