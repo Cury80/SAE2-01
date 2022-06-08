@@ -31,7 +31,6 @@
             this.cmdLignes = new System.Windows.Forms.Button();
             this.cmdStations = new System.Windows.Forms.Button();
             this.CmdRetour = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cmdLignes
@@ -62,30 +61,18 @@
             this.CmdRetour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CmdRetour.Image = global::Page_d_accueil.Properties.Resources.fleche_bouton;
             this.CmdRetour.Location = new System.Drawing.Point(8, 8);
-            this.CmdRetour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CmdRetour.Margin = new System.Windows.Forms.Padding(2);
             this.CmdRetour.Name = "CmdRetour";
             this.CmdRetour.Size = new System.Drawing.Size(43, 32);
             this.CmdRetour.TabIndex = 2;
             this.CmdRetour.UseVisualStyleBackColor = true;
             this.CmdRetour.Click += new System.EventHandler(this.CmdRetour_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "metro",
-            "tramway"});
-            this.comboBox1.Location = new System.Drawing.Point(222, 215);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(356, 21);
-            this.comboBox1.TabIndex = 45;
-            // 
             // FrmLigneOuStation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.CmdRetour);
             this.Controls.Add(this.cmdStations);
             this.Controls.Add(this.cmdLignes);
@@ -103,6 +90,5 @@
         private System.Windows.Forms.Button cmdLignes;
         private System.Windows.Forms.Button cmdStations;
         private System.Windows.Forms.Button CmdRetour;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

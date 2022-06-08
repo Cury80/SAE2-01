@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Runtime;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using MySql.Data;
@@ -56,10 +57,11 @@ namespace Bibliothèque_accès
         public static bool Ajout_ligne(string nom, string frequence, string heure_depart, string heure_dernier_passage, int type)
         {
             bool reponse = true;
+                string sql = $"INSERT INTO Ligne VALUES (null,'{nom}', '{frequence}', '{heure_depart}', '{heure_dernier_passage}', '{type}')";
+                MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             try
             {
-                string sql = $"INSERT INTO ligne VALUES ('{nom}', '{frequence}', '{heure_depart}', '{heure_dernier_passage}', '{type}')";
-                MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+                cmd.ExecuteNonQuery();
             }
             catch (Exception erreur)
             {
@@ -71,21 +73,21 @@ namespace Bibliothèque_accès
 
         public static bool Ajout_station(string nom_station)
         {
-            string sql = $"insert into station (nomstation) values ('{nom_station}')";
+            string sql = $"insert into Station (nomstation) values ('{nom_station}')";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             return true;
         }
 
         public static bool Supp_ligne(string nom_ligne)
         {
-            string sql = $"delete from ligne where nomligne = '{nom_ligne}'";
+            string sql = $"delete from Ligne where nomligne = '{nom_ligne}'";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             return true;
         }
 
         public static bool Supp_station(string nom_station)
         {
-            string sql = $"delete from station where nomstation = '{nom_station}'";
+            string sql = $"delete from Station where nomstation = '{nom_station}'";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             return true;
         }
@@ -94,7 +96,7 @@ namespace Bibliothèque_accès
             
             List<Lignes> liste_lignes = new List<Lignes> ();
 
-            string sql = "select * from ligne";
+            string sql = "select * from Ligne";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
 
             try
@@ -126,7 +128,7 @@ namespace Bibliothèque_accès
         {
             List<Station> liste_stations = new List<Station>();
 
-            string sql = "select * from station";
+            string sql = "select * from Station";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             try
             {
