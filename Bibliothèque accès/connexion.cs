@@ -210,7 +210,6 @@ namespace Bibliothèque_accès
             string sql = $"select NomLigne FROM Ligne WHERE NomLigne = '{nom}'";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
 
-            
             try
             {
                 MySqlDataReader rdr = cmd.ExecuteReader();
@@ -218,9 +217,8 @@ namespace Bibliothèque_accès
 
                 while (rdr.Read())
                 {
-                    nomLigne = Convert.ToString(rdr[1]);
+                    nomLigne = (string)rdr[0];
 
-                    Console.WriteLine(nomLigne);
                     listeNomLigne.Add(nomLigne);
                 }
                 
@@ -232,13 +230,15 @@ namespace Bibliothèque_accès
                 Debug.Print(er.Message);
             }
 
-            int test = listeNomLigne.Count();
-
-            Console.WriteLine(test);
-            nomLigne = "test";
+            nomLigne = listeNomLigne[0];
 
             return nomLigne;
 
         }
+
+        /*public static List<TimeSpan> Lecture_frequence(string nom_ligne)
+        {
+
+        }*/
     }
 }

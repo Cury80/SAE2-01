@@ -69,19 +69,28 @@ namespace Page_d_accueil
                 if (nb_erreurs == 0)    //vérifie qu'il n'y ait pas d'erreurs avant de sauvegarder 
                 {
                     fermeture++;
-                    
-                    bool cmd = BDD.Ajout_ligne(txtNom.Text, TimeSpan.Parse(txtFrequence.Text), TimeSpan.Parse(txtDépart.Text), TimeSpan.Parse(txtDernier.Text), numero_type);
-                    if (cmd == true)
+                    try
                     {
-                        MessageBox.Show("Ajout réussi", "Ajout ligne");
+                        bool cmd = BDD.Ajout_ligne(txtNom.Text, TimeSpan.Parse(txtFrequence.Text), TimeSpan.Parse(txtDépart.Text), TimeSpan.Parse(txtDernier.Text), numero_type);
+                        if (cmd == true)
+                        {
+                            MessageBox.Show("Ajout réussi", "Ajout ligne");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erreur dans l'ajout de la ligne", "Erreur");
+                        }
+                        Form liste_ligne = new Page_d_accueil.FrmListeLigne();
+                        liste_ligne.Show();
+                        this.Close();
                     }
-                    else
+                    catch (Exception erreur)
                     {
-                        MessageBox.Show("Erreur dans l'ajout de la ligne", "Erreur");
+                        MessageBox.Show("Erreur dans l'entrée des valeurs, Pour la fréquence, heure de départ et heure de dernier passage veuillez mettre en format hh:mm:ss", "Message");
                     }
-                    Form liste_ligne = new Page_d_accueil.FrmListeLigne();
-                    liste_ligne.Show();
-                    this.Close();
+
+
+                   
                 }
             }
         }
