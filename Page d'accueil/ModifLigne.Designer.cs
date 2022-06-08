@@ -181,7 +181,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmModifLigne_FormClosed);
-            this.Load += new System.EventHandler(this.FrmModifLigne_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +191,7 @@
 
         private System.Windows.Forms.Button cmdEnregistrer;
         private System.Windows.Forms.Button cmdQuitter;
-        private System.Windows.Forms.Label lblTransport;
+        protected System.Windows.Forms.Label lblTransport;
         private System.Windows.Forms.Label lblDernier;
         private System.Windows.Forms.Label lblDepart;
         private System.Windows.Forms.Label lblFrequence;

@@ -43,15 +43,20 @@ namespace Page_d_accueil
             }else if (sender == cmdEnregistrer)
             {
                 bool reponse = Bibliothèque_accès.BDD.Ajout_station(txtNom.Text);
+                fermeture++;
 
                 if (reponse)
                 {
                     MessageBox.Show("Ajout de la station réussi", "Message système");
+                    
                 }
                 else
                 {
                     MessageBox.Show("Echec de l'ajout de la station ", "Message système");
                 }
+                Form liste_Station = new Page_d_accueil.FrmListeStation();
+                liste_Station.Show();
+                this.Close();
             }
         }
 

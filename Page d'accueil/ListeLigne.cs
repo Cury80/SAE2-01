@@ -12,7 +12,6 @@ namespace Page_d_accueil
 {
     public partial class FrmListeLigne : Form
     {
-        List<Bibliothèque_accès.Lignes> liste_lignes;
         
         public FrmListeLigne()
         {
@@ -29,17 +28,43 @@ namespace Page_d_accueil
                 Form ligne_station = new Page_d_accueil.FrmLigneOuStation();
                 ligne_station.Show();
                 this.Dispose();
-            }else if (sender == cmdAjouter)
+            }
+            else if (sender == cmdAjouter)
             {
                 Form ajout_ligne = new Page_d_accueil.FrmAjoutLigne();
                 ajout_ligne.Show();
                 this.Dispose();
-            }else if (sender == cmdModifier)
+            }
+            else if (sender == cmdModifier)
             {
                 Form modif_ligne = new Page_d_accueil.FrmModifLigne();
+                modif_ligne.Owner = this;
                 modif_ligne.Show();
                 //string ligne_focus = lstLigne.SelectedValue.ToString();
-                this.Close();
+                this.Hide();
+            }
+            else if (sender == cmdSupprimer)
+            {
+                bool reponse;
+                string nomLigne;
+                nomLigne = lstLigne.SelectedItem.ToString();
+                reponse = Bibliothèque_accès.BDD.Supp_ligne(nomLigne);
+                if (reponse == true)
+                {
+                    lstLigne.Items.Clear();
+                    lecteurListe.Clear();
+                    MessageBox.Show("Supression réussi", "Message");
+                    lecteurListe = Bibliothèque_accès.BDD.Lecture_Ligne();
+
+                    foreach (string ligne in lecteurListe)
+                    {
+                        lstLigne.Items.Add(ligne);
+                    }
+                }
+                else 
+                {
+                    MessageBox.Show("erreur", "Message d'erreur");
+                }
             }
         }
 
@@ -51,39 +76,28 @@ namespace Page_d_accueil
             }
         }
 
+        List<string> lecteurListe;
+
         private void FrmListeLigne_Load(object sender, EventArgs e)
         {
-            int ligne_panel = 0;
-            liste_lignes = Bibliothèque_accès.BDD.Lecture_Ligne();
-            foreach (Bibliothèque_accès.Lignes lignes in liste_lignes)
+            lecteurListe = Bibliothèque_accès.BDD.Lecture_Ligne();
+            
+            foreach(string ligne in lecteurListe)
             {
-                ligne_panel++;
-                Ajout_label(lignes.Nom_ligne, 0, ligne_panel);
-                Ajout_label(lignes.Type.ToString(), 0, ligne_panel);
+                lstLigne.Items.Add(ligne);
             }
         }
 
-        private void Ajout_label(string nom_ligne, int nb_ligne, int colonne)
+        
+        private void lstLigne_SelectedValueChanged(object sender, EventArgs e)
         {
-            Label lbl = new Label();
-            lbl.AutoSize = false;
-            lbl.Size = LblType_transport_panel.Size;
-            lbl.Font = new Font(LblType_transport_panel.Font, FontStyle.Regular);
-            lbl.TextAlign = ContentAlignment.MiddleCenter;
-            if ( nom_ligne.ToString() == "1")
-            {
-                lbl.Text = "Tramway";
-            }else if ( nom_ligne.ToString() == "2")
-            {
-                lbl.Text = "Métro";
-            }
-            else
-            {
-                lbl.Text = nom_ligne;
-            }
-           
-
-            tableLayoutPanel1.Controls.Add(lbl, nb_ligne, colonne);
+            lblNom.Text = Bibliothèque_accès.BDD.Lecture_NomLigne(lstLigne.SelectedItems.ToString());
+            
+            
+            //lblDepart;
+            //lblFrequence;
+            //lblDernier;
+            //lblType
         }
     }
 }

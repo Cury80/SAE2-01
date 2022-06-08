@@ -19,9 +19,10 @@ namespace Page_d_accueil
 
         int fermeture = 0;
 
-        private void FrmModifLigne_Load(object sender, EventArgs e)
+        private void FrmModifLigne_Load(object sender, EventArgs e, FrmListeLigne frmListeLigne)
         {
-
+            Form ListeLigne = (Form)this.Owner;
+            txtNom.Text = frmListeLigne.lblNom.Text;
         }
 
         private void FrmModifLigne_FormClosed(object sender, FormClosedEventArgs e)
@@ -36,7 +37,7 @@ namespace Page_d_accueil
         {
             if (sender == cmdQuitter)
             {
-                DialogResult message_sortie = MessageBox.Show("Voullezo-vous quitter sans sauvegarder ?", "Quitter", MessageBoxButtons.YesNo);
+                DialogResult message_sortie = MessageBox.Show("Voulez-vous quitter sans sauvegarder ?", "Quitter", MessageBoxButtons.YesNo);
                 if (message_sortie == DialogResult.Yes)
                 {
                     fermeture++;

@@ -18,9 +18,16 @@ namespace Page_d_accueil
         }
 
         int fermeture = 0;
+
+        List<string> lecteurListe;
         private void ListeStation_Load(object sender, EventArgs e)
         {
+            lecteurListe = Bibliothèque_accès.BDD.Lecture_Station();
 
+            foreach (string station in lecteurListe)
+            {
+                lstStation.Items.Add(station);
+            }
         }
 
         private void CmdRetour_Click(object sender, EventArgs e)
@@ -41,7 +48,30 @@ namespace Page_d_accueil
             {
                 Form modif_station = new Page_d_accueil.FrmModifStation();
                 modif_station.Show();
-                this.Close();
+                this.Hide();
+            }
+            else if (sender == cmdSupprimer)
+            {
+                bool reponse;
+                string nomStation;
+                nomStation = lstStation.SelectedItem.ToString();
+                reponse = Bibliothèque_accès.BDD.Supp_station(nomStation);
+                if (reponse == true)
+                {
+                    lstStation.Items.Clear();
+                    lecteurListe.Clear();
+                    MessageBox.Show("Supression réussi", "Message");
+                    lecteurListe = Bibliothèque_accès.BDD.Lecture_Station();
+
+                    foreach (string station in lecteurListe)
+                    {
+                        lstStation.Items.Add(station);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("erreur", "Message d'erreur");
+                }
             }
         }
 
