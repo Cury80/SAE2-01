@@ -82,5 +82,10 @@ namespace Page_d_accueil
                 Application.OpenForms[0].Close();
             }
         }
+
+        private void lstStation_SelectedValueChanged(object sender, EventArgs e)
+        {
+            lblNom.Text = Bibliothèque_accès.BDD.Lecture_NomStation(lstStation.SelectedItem.ToString());
+        }
     }
 }

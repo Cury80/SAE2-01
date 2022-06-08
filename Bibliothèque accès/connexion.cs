@@ -364,5 +364,40 @@ namespace Bibliothèque_accès
             return TypeTransport;
 
         }
+
+
+        public static string Lecture_NomStation(string nom)
+        {
+            List<string> listeNomStation = new List<string>();
+            string NomStation;
+            string sql = $"select NomStation FROM Station where NomStation = '{nom}'";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+
+            try
+            {
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+
+                while (rdr.Read())
+                {
+                    NomStation = (string)rdr[0];
+
+                    listeNomStation.Add(NomStation);
+                }
+
+                rdr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception er)
+            {
+                Debug.Print(er.Message);
+            }
+
+            NomStation = listeNomStation[0];
+
+            return NomStation;
+
+        }
+
     }
 }
