@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,8 +21,15 @@ namespace Page_d_accueil
             txtFrequence.Text = frequence;
             txtDépart.Text = depart;
             txtDernier.Text = dernier;
-            cmbType.Text = type;
             ancienNom = nomText;
+            if (type == "Metro")
+            {
+                cmbType.Text = "Métro";
+            }
+            else
+            {
+                cmbType.Text = type;
+            }
         }
 
 

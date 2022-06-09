@@ -158,7 +158,6 @@ namespace Gerer_le_reseau
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmGererReseau_FormClosed);
-            this.Load += new System.EventHandler(this.FrmGererReseau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

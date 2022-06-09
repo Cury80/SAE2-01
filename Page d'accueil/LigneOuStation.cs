@@ -17,6 +17,8 @@ namespace Page_d_accueil
             InitializeComponent();
         }
 
+
+
         int fermeture = 0;
         private void LigneOuStation_Load(object sender, EventArgs e)
         {

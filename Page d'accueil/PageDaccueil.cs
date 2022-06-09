@@ -18,6 +18,23 @@ namespace Page_d_accueil
             InitializeComponent();
         }
 
+        /// <summary>
+        /// procédure qui regarde sur quel boutton l'utilisateur appuie,
+        /// 
+        /// s'il appuie sur Rechercher un itinéraire (cmdItinéraire) on crée
+        /// une instance du formulaire Calculitineraire, on cache ensuite le formulaire
+        /// de départ (s'il est fermé il arrête totalement l'application) et on ouvre 
+        /// l'instance créée précédement.
+        /// 
+        /// Appuyer sur le bouton cmdCarte crée une instance du formulaire Map
+        /// on cache ensuite le formulaire d'origine et on affiche l'instance du formulaire
+        /// Map.
+        /// 
+        /// Appuyer sur le bouton cmdGerer crée une instance du formulaire GererReseau
+        /// on cache le formulaire d'origine et on affiche l'instance du formulaire GererReseau
+        /// </summary>
+        /// <param name="sender">récupère l'objet d'où vient l'interaction</param>
+        /// <param name="e">récupère l'evenement</param>
         private void cmdItinéraire_Click(object sender, EventArgs e)
         {
             if (sender == cmdItinéraire)
@@ -40,6 +57,19 @@ namespace Page_d_accueil
             }
         }
 
+
+        /// <summary>
+        /// Suite d'instructions que l'on effectue au chargement du formulaire 
+        /// 
+        /// On appelle la fonction initConnection qui se trouve dans la 
+        /// bibliothèque_accès
+        /// 
+        /// On stock la valeur de sortie dans un bool et on vérifie la valeur pour afficher 
+        /// un message je confirmation
+        ///
+        /// </summary>
+        /// <param name="sender">le formulaire</param>
+        /// <param name="e">le chargement du formulaire</param>
         private void FrmPageDaccueil_Load(object sender, EventArgs e)
         {
             bool connexion = Bibliothèque_accès.BDD.initConnexion();
@@ -54,6 +84,14 @@ namespace Page_d_accueil
             }
         }
 
+        /// <summary>
+        /// On appelle la fonction FermerConnexion et on stock la valeur de retour dans 
+        /// un bool, si la valeur est vraie alors on affiche un message de 
+        /// réussite sinon un message d'erreur
+        /// 
+        /// </summary>
+        /// <param name="sender">le formulaire</param>
+        /// <param name="e">la fermeture du formulaire</param>
         private void FrmPageDaccueil_FormClosing(object sender, FormClosingEventArgs e)
         {
             bool fermeture = Bibliothèque_accès.BDD.FermerConnexion();
