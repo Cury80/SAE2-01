@@ -19,11 +19,11 @@ namespace Page_d_accueil
             InitializeComponent();
         }
 
-        int fermeture = 0;
+        bool fermeture = true;
 
         private void CmdRetour_Click(object sender, EventArgs e)
         {
-            fermeture++;
+            fermeture = false;
             if (sender == CmdRetour)
             {
                 Form ligne_station = new Page_d_accueil.FrmLigneOuStation();
@@ -66,7 +66,7 @@ namespace Page_d_accueil
 
         private void FrmListeLigne_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (fermeture == 0)
+            if (fermeture == true)
             {
                 Application.OpenForms[0].Close();
             }
@@ -95,7 +95,7 @@ namespace Page_d_accueil
             cmdModifier.Enabled = false;
             cmdSupprimer.Enabled = false;
 
-            fermeture = 0;
+            fermeture = true;
             if (lecteurListe != null)
             {
                 lecteurListe.Clear();

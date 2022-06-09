@@ -190,7 +190,6 @@
             this.Name = "FrmModifLigne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmModifLigne_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -20,23 +20,10 @@ namespace Page_d_accueil
             InitializeComponent();
         }
 
-        int fermeture = 0;
-
         private void AjoutLigne_Load(object sender, EventArgs e)
         {
-
+            cmdEnregistrer.Enabled = false;
         }
-
-        private void FrmAjoutLigne_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (fermeture == 0)
-            {
-                Application.OpenForms[0].Close();
-            }
-        }
-
-
-
 
         private void cmdQuitter_Click(object sender, EventArgs e)
         {
@@ -49,7 +36,6 @@ namespace Page_d_accueil
                 DialogResult message_sortie = MessageBox.Show("Voullez-vous quitter sans sauvegarder ?", "Quitter", MessageBoxButtons.YesNo);
                 if (message_sortie == DialogResult.Yes)
                 {
-                    fermeture++;
                     this.Close();
                 }
             }
@@ -64,8 +50,6 @@ namespace Page_d_accueil
                     numero_type = 1;
                 }
                 
-
-                fermeture++;
                 try
                 {
                 bool cmd = BDD.Ajout_ligne(txtNom.Text, TimeSpan.Parse(txtFrequence.Text), TimeSpan.Parse(txtDépart.Text), TimeSpan.Parse(txtDernier.Text), numero_type);
@@ -84,6 +68,14 @@ namespace Page_d_accueil
                     MessageBox.Show("Erreur dans l'entrée des valeurs, Pour la fréquence, heure de départ et heure de dernier passage veuillez mettre en format hh:mm:ss", "Message");
                 }
                 
+            }
+        }
+
+        private void txtNom_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNom.Text != "" && txtFrequence.Text != "" && txtDépart.Text != "" && cmbMetroTramway.Text != "")
+            {
+                cmdEnregistrer.Enabled = true;
             }
         }
     }

@@ -12,34 +12,50 @@ namespace Page_d_accueil
 {
     public partial class FrmModifStation : Form
     {
-        public FrmModifStation()
+        string ancien_nom_station;
+        public FrmModifStation(string nom_station)
         {
             InitializeComponent();
+            txtNom.Text = nom_station;
+            ancien_nom_station = nom_station;
         }
-
-        int fermeture = 0;
-
         private void ModifStation_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void FrmModifStation_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (fermeture == 0)
-            {
-                Application.OpenForms[0].Close();
-            }
+            string ancien_nom_station = txtNom.Text;
         }
 
         private void cmdQuitter_Click(object sender, EventArgs e)
         {
-            DialogResult message_sortie = MessageBox.Show("Voullez-vous quitter sans sauvegarder ?", "Quitter", MessageBoxButtons.YesNo);
-            if (message_sortie == DialogResult.Yes)
+
+            if (sender == cmdQuitter)
             {
-                fermeture++;
-                this.Close();
+                DialogResult message_sortie = MessageBox.Show("Voullez-vous quitter sans sauvegarder ?", "Quitter", MessageBoxButtons.YesNo);
+                if (message_sortie == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+            }else if (sender == cmdEnregistrer)
+            {
+                try
+                {
+                    bool reponse = Bibliothèque_accès.BDD.Modif_Station(txtNom.Text, ancien_nom_station);
+                    if (reponse == true)
+                    {
+                        MessageBox.Show("Modification réussi", "Message");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur dans la modification de la station", "Message");
+                    }
+                    this.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erreur dans la modification de la station");
+                }
             }
+
         }
     }
 }

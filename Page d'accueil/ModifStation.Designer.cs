@@ -45,6 +45,7 @@
             this.cmdEnregistrer.TabIndex = 43;
             this.cmdEnregistrer.Text = "Enregistrer";
             this.cmdEnregistrer.UseVisualStyleBackColor = true;
+            this.cmdEnregistrer.Click += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // cmdQuitter
             // 
@@ -102,7 +103,6 @@
             this.Name = "FrmModifStation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmModifStation_FormClosed);
             this.Load += new System.EventHandler(this.ModifStation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

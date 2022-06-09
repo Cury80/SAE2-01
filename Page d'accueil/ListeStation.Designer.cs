@@ -60,6 +60,7 @@
             // 
             // cmdModifier
             // 
+            this.cmdModifier.Enabled = false;
             this.cmdModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmdModifier.Location = new System.Drawing.Point(699, 223);
             this.cmdModifier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -72,6 +73,7 @@
             // 
             // cmdSupprimer
             // 
+            this.cmdSupprimer.Enabled = false;
             this.cmdSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmdSupprimer.Location = new System.Drawing.Point(699, 346);
             this.cmdSupprimer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -134,8 +136,8 @@
             this.Name = "FrmListeStation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
+            this.Activated += new System.EventHandler(this.FrmListeStation_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmListeStation_FormClosed);
-            this.Load += new System.EventHandler(this.ListeStation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

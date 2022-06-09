@@ -110,7 +110,23 @@ namespace Bibliothèque_accès
             return true;
         }
 
-    
+        public static bool Modif_Station(string nom_station, string ancien_nom_station)
+        {
+
+            string sql = $"update Station set NomStation = '{nom_station}' where NomStation = '{ancien_nom_station}'";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception erreur)
+            {
+                Debug.Print(erreur.Message);
+                return false;
+            }
+            return true;
+        }
 
         public static bool Supp_ligne(string nom_ligne) { 
             string sql = $"delete from Ligne where nomligne = '{nom_ligne}'";

@@ -17,23 +17,15 @@ namespace Page_d_accueil
         {
             InitializeComponent();
             txtNom.Text = nomText;
-            txtFrequence.Text = frequence;  
+            txtFrequence.Text = frequence;
             txtDépart.Text = depart;
             txtDernier.Text = dernier;
             cmbType.Text = type;
             ancienNom = nomText;
         }
 
-        int fermeture = 0;
 
-
-        private void FrmModifLigne_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (fermeture == 0)
-            {
-                Application.OpenForms[0].Close();
-            }
-        }
+     
 
         private void cmdQuitter_Click(object sender, EventArgs e)
         {
@@ -44,7 +36,6 @@ namespace Page_d_accueil
                 DialogResult message_sortie = MessageBox.Show("Voulez-vous quitter sans sauvegarder ?", "Quitter", MessageBoxButtons.YesNo);
                 if (message_sortie == DialogResult.Yes)
                 {
-                    fermeture++;
                     this.Close();
                 }
             }
@@ -60,17 +51,16 @@ namespace Page_d_accueil
                     numeroType = 1;
                 }
 
-                fermeture++;
                 try
                 {
                     bool cmd = Bibliothèque_accès.BDD.Modifier_Ligne(txtNom.Text, TimeSpan.Parse(txtFrequence.Text), TimeSpan.Parse(txtDépart.Text), TimeSpan.Parse(txtDernier.Text), numeroType, ancienNom);
                     if (cmd == true)
                     {
-                        MessageBox.Show("Modification réussi", "Modification ligne");
+                        MessageBox.Show("Modification réussi", "Message");
                     }
                     else
                     {
-                        MessageBox.Show("Erreur dans la modification de la ligne", "Erreur");
+                        MessageBox.Show("Erreur dans la modification de la ligne", "Message");
                     }
                     this.Close();
                 }

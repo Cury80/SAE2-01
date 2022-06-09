@@ -103,7 +103,6 @@
             this.Name = "FrmAjoutStation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAjoutStation_FormClosed);
             this.Load += new System.EventHandler(this.FrmAjoutStation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

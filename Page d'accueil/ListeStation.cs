@@ -17,36 +17,27 @@ namespace Page_d_accueil
             InitializeComponent();
         }
 
-        int fermeture = 0;
+        bool fermeture = true;
 
-        List<string> lecteurListe;
-        private void ListeStation_Load(object sender, EventArgs e)
-        {
-            lecteurListe = Bibliothèque_accès.BDD.Lecture_Station();
-            lstStation.Items.Clear();
-
-            foreach (string station in lecteurListe)
-            {
-                lstStation.Items.Add(station);
-            }
-        }
 
         private void CmdRetour_Click(object sender, EventArgs e)
         {
-            fermeture++;
+            fermeture = false;
             if (sender == CmdRetour)
             {
                 
                 Form ligne_station = new Page_d_accueil.FrmLigneOuStation();
                 ligne_station.Show();
                 this.Close();
+
             }else if (sender == cmdAjouter)
             {
                 Form ajout_station = new Page_d_accueil.FrmAjoutStation();
                 ajout_station.ShowDialog();
+
             }else if (sender == cmdModifier)
             {
-                Form modif_station = new Page_d_accueil.FrmModifStation();
+                Form modif_station = new Page_d_accueil.FrmModifStation(lstStation.SelectedItem.ToString());
                 modif_station.ShowDialog();
             }
             else if (sender == cmdSupprimer)
@@ -55,6 +46,7 @@ namespace Page_d_accueil
                 string nomStation;
                 nomStation = lstStation.SelectedItem.ToString();
                 reponse = Bibliothèque_accès.BDD.Supp_station(nomStation);
+
                 if (reponse == true)
                 {
                     lstStation.Items.Clear();
@@ -76,7 +68,7 @@ namespace Page_d_accueil
 
         private void FrmListeStation_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (fermeture == 0)
+            if (fermeture == true)
             {
                 Application.OpenForms[0].Close();
             }
@@ -87,6 +79,26 @@ namespace Page_d_accueil
             if (lstStation.SelectedItem != null)
             {
                 lblNom.Text = $"Nom : {Bibliothèque_accès.BDD.Lecture_NomStation(lstStation.SelectedItem.ToString())}";
+                cmdModifier.Enabled = true;
+                cmdSupprimer.Enabled = true;
+            }
+        }
+
+
+        List<string> lecteurListe;
+        private void FrmListeStation_Activated(object sender, EventArgs e)
+        {
+            fermeture = true;
+            cmdModifier.Enabled = false;
+            cmdSupprimer.Enabled = false;
+            lblNom.Text = "Nom :";
+
+            lecteurListe = Bibliothèque_accès.BDD.Lecture_Station();
+            lstStation.Items.Clear();
+
+            foreach (string station in lecteurListe)
+            {
+                lstStation.Items.Add(station);
             }
         }
     }
