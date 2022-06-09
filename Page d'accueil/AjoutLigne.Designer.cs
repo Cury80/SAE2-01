@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cmdEnregistrer = new System.Windows.Forms.Button();
             this.cmdQuitter = new System.Windows.Forms.Button();
@@ -41,9 +40,7 @@
             this.txtFrequence = new System.Windows.Forms.TextBox();
             this.txtDernier = new System.Windows.Forms.TextBox();
             this.txtDépart = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.cmbMetroTramway = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,7 +50,7 @@
             this.label1.Location = new System.Drawing.Point(260, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(273, 39);
-            this.label1.TabIndex = 5;
+            this.label1.TabIndex = 9;
             this.label1.Text = "Ajouter une ligne";
             // 
             // cmdEnregistrer
@@ -62,7 +59,7 @@
             this.cmdEnregistrer.Location = new System.Drawing.Point(482, 358);
             this.cmdEnregistrer.Name = "cmdEnregistrer";
             this.cmdEnregistrer.Size = new System.Drawing.Size(108, 49);
-            this.cmdEnregistrer.TabIndex = 37;
+            this.cmdEnregistrer.TabIndex = 6;
             this.cmdEnregistrer.Text = "Enregistrer";
             this.cmdEnregistrer.UseVisualStyleBackColor = true;
             this.cmdEnregistrer.Click += new System.EventHandler(this.cmdQuitter_Click);
@@ -73,7 +70,7 @@
             this.cmdQuitter.Location = new System.Drawing.Point(623, 358);
             this.cmdQuitter.Name = "cmdQuitter";
             this.cmdQuitter.Size = new System.Drawing.Size(108, 49);
-            this.cmdQuitter.TabIndex = 36;
+            this.cmdQuitter.TabIndex = 5;
             this.cmdQuitter.Text = "Quitter";
             this.cmdQuitter.UseVisualStyleBackColor = true;
             this.cmdQuitter.Click += new System.EventHandler(this.cmdQuitter_Click);
@@ -131,41 +128,42 @@
             // txtNom
             // 
             this.txtNom.Location = new System.Drawing.Point(152, 97);
+            this.txtNom.MaxLength = 50;
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(612, 20);
-            this.txtNom.TabIndex = 29;
+            this.txtNom.TabIndex = 0;
             this.txtNom.Validated += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // txtFrequence
             // 
             this.txtFrequence.Location = new System.Drawing.Point(152, 147);
+            this.txtFrequence.MaxLength = 8;
             this.txtFrequence.Name = "txtFrequence";
             this.txtFrequence.Size = new System.Drawing.Size(612, 20);
-            this.txtFrequence.TabIndex = 28;
+            this.txtFrequence.TabIndex = 1;
             this.txtFrequence.Validated += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // txtDernier
             // 
             this.txtDernier.Location = new System.Drawing.Point(152, 247);
+            this.txtDernier.MaxLength = 8;
             this.txtDernier.Name = "txtDernier";
             this.txtDernier.Size = new System.Drawing.Size(612, 20);
-            this.txtDernier.TabIndex = 27;
+            this.txtDernier.TabIndex = 3;
             this.txtDernier.Validated += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // txtDépart
             // 
             this.txtDépart.Location = new System.Drawing.Point(152, 197);
+            this.txtDépart.MaxLength = 8;
             this.txtDépart.Name = "txtDépart";
             this.txtDépart.Size = new System.Drawing.Size(612, 20);
-            this.txtDépart.TabIndex = 26;
+            this.txtDépart.TabIndex = 2;
             this.txtDépart.Validated += new System.EventHandler(this.cmdQuitter_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // cmbMetroTramway
             // 
+            this.cmbMetroTramway.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMetroTramway.FormattingEnabled = true;
             this.cmbMetroTramway.Items.AddRange(new object[] {
             "Métro",
@@ -173,7 +171,7 @@
             this.cmbMetroTramway.Location = new System.Drawing.Point(152, 297);
             this.cmbMetroTramway.Name = "cmbMetroTramway";
             this.cmbMetroTramway.Size = new System.Drawing.Size(612, 21);
-            this.cmbMetroTramway.TabIndex = 38;
+            this.cmbMetroTramway.TabIndex = 4;
             // 
             // FrmAjoutLigne
             // 
@@ -198,7 +196,6 @@
             this.Text = "Metram Lille";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAjoutLigne_FormClosed);
             this.Load += new System.EventHandler(this.AjoutLigne_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,7 +214,6 @@
         private System.Windows.Forms.TextBox txtFrequence;
         private System.Windows.Forms.TextBox txtDernier;
         private System.Windows.Forms.TextBox txtDépart;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ComboBox cmbMetroTramway;
     }
 }

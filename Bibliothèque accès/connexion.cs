@@ -94,19 +94,20 @@ namespace Bibliothèque_accès
         {
             //N_Ligne, NomLigne, Fréquence, HeureDeDépart, HeureDeDernierPassage, N_Type)
 
-            string sql = $"UPDATE Ligne SET NomLigne ='{nom}', Fréquence ='{frequence}', HeureDeDépart ='{heure_depart}', HeureDeDernierPassage = '{heure_dernier_passage}', N_type = {type}) WHERE NomLigne = '{ancienNom}'";
+            string sql = $"UPDATE Ligne SET NomLigne ='{nom}', Fréquence ='{frequence}', HeureDeDépart ='{heure_depart}', HeureDeDernierPassage = '{heure_dernier_passage}', N_type = '{type}' WHERE NomLigne = '{ancienNom}'";
             MySqlCommand cmd1 = new MySqlCommand(sql, maCnx);
 
             try
             {
                 cmd1.ExecuteNonQuery();
-                return true;
+                
             }
             catch (Exception erreur)
             {
                 Debug.Print(erreur.Message);
                 return false;
             }
+            return true;
         }
 
     

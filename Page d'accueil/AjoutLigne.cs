@@ -40,7 +40,7 @@ namespace Page_d_accueil
 
         private void cmdQuitter_Click(object sender, EventArgs e)
         {
-            int nb_erreurs = 0;
+            
             int numero_type = 0;
 
 
@@ -63,33 +63,27 @@ namespace Page_d_accueil
                 {
                     numero_type = 1;
                 }
-                else
-                {
-                    errorProvider1.SetError(cmbMetroTramway, "Veuillez choisir entre Métro et Tramway");
-                }
                 
 
-                if (nb_erreurs == 0)    //vérifie qu'il n'y ait pas d'erreurs avant de sauvegarder 
+                fermeture++;
+                try
                 {
-                    fermeture++;
-                    try
-                    {
-                        bool cmd = BDD.Ajout_ligne(txtNom.Text, TimeSpan.Parse(txtFrequence.Text), TimeSpan.Parse(txtDépart.Text), TimeSpan.Parse(txtDernier.Text), numero_type);
-                        if (cmd == true)
-                        {
-                            MessageBox.Show("Ajout réussi", "Ajout ligne");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Erreur dans l'ajout de la ligne", "Erreur");
-                        }
+                bool cmd = BDD.Ajout_ligne(txtNom.Text, TimeSpan.Parse(txtFrequence.Text), TimeSpan.Parse(txtDépart.Text), TimeSpan.Parse(txtDernier.Text), numero_type);
+                   if (cmd == true)
+                   {
+                   MessageBox.Show("Ajout réussi", "Ajout ligne");
+                   }
+                   else
+                   {
+                       MessageBox.Show("Erreur dans l'ajout de la ligne", "Erreur");
+                   }
                         this.Close();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Erreur dans l'entrée des valeurs, Pour la fréquence, heure de départ et heure de dernier passage veuillez mettre en format hh:mm:ss", "Message");
-                    }
                 }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erreur dans l'entrée des valeurs, Pour la fréquence, heure de départ et heure de dernier passage veuillez mettre en format hh:mm:ss", "Message");
+                }
+                
             }
         }
     }

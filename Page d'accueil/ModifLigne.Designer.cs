@@ -40,28 +40,27 @@
             this.txtFrequence = new System.Windows.Forms.TextBox();
             this.txtDernier = new System.Windows.Forms.TextBox();
             this.txtDépart = new System.Windows.Forms.TextBox();
-            this.CmbType = new System.Windows.Forms.ComboBox();
+            this.cmbType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cmdEnregistrer
             // 
             this.cmdEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmdEnregistrer.Location = new System.Drawing.Point(722, 548);
-            this.cmdEnregistrer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdEnregistrer.Location = new System.Drawing.Point(481, 356);
             this.cmdEnregistrer.Name = "cmdEnregistrer";
-            this.cmdEnregistrer.Size = new System.Drawing.Size(162, 75);
-            this.cmdEnregistrer.TabIndex = 25;
+            this.cmdEnregistrer.Size = new System.Drawing.Size(108, 49);
+            this.cmdEnregistrer.TabIndex = 7;
             this.cmdEnregistrer.Text = "Enregistrer";
             this.cmdEnregistrer.UseVisualStyleBackColor = true;
+            this.cmdEnregistrer.Click += new System.EventHandler(this.cmdQuitter_Click);
             // 
             // cmdQuitter
             // 
             this.cmdQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmdQuitter.Location = new System.Drawing.Point(933, 548);
-            this.cmdQuitter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdQuitter.Location = new System.Drawing.Point(622, 356);
             this.cmdQuitter.Name = "cmdQuitter";
-            this.cmdQuitter.Size = new System.Drawing.Size(162, 75);
-            this.cmdQuitter.TabIndex = 24;
+            this.cmdQuitter.Size = new System.Drawing.Size(108, 49);
+            this.cmdQuitter.TabIndex = 6;
             this.cmdQuitter.Text = "Quitter";
             this.cmdQuitter.UseVisualStyleBackColor = true;
             this.cmdQuitter.Click += new System.EventHandler(this.cmdQuitter_Click);
@@ -70,10 +69,9 @@
             // 
             this.lblTransport.AutoSize = true;
             this.lblTransport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTransport.Location = new System.Drawing.Point(14, 457);
-            this.lblTransport.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTransport.Location = new System.Drawing.Point(9, 297);
             this.lblTransport.Name = "lblTransport";
-            this.lblTransport.Size = new System.Drawing.Size(184, 25);
+            this.lblTransport.Size = new System.Drawing.Size(134, 17);
             this.lblTransport.TabIndex = 23;
             this.lblTransport.Text = "Type de Transport :";
             // 
@@ -81,10 +79,9 @@
             // 
             this.lblDernier.AutoSize = true;
             this.lblDernier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDernier.Location = new System.Drawing.Point(32, 378);
-            this.lblDernier.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDernier.Location = new System.Drawing.Point(21, 246);
             this.lblDernier.Name = "lblDernier";
-            this.lblDernier.Size = new System.Drawing.Size(168, 25);
+            this.lblDernier.Size = new System.Drawing.Size(122, 17);
             this.lblDernier.TabIndex = 22;
             this.lblDernier.Text = "Dernier Passage :";
             // 
@@ -92,10 +89,9 @@
             // 
             this.lblDepart.AutoSize = true;
             this.lblDepart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDepart.Location = new System.Drawing.Point(126, 302);
-            this.lblDepart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDepart.Location = new System.Drawing.Point(84, 196);
             this.lblDepart.Name = "lblDepart";
-            this.lblDepart.Size = new System.Drawing.Size(81, 25);
+            this.lblDepart.Size = new System.Drawing.Size(59, 17);
             this.lblDepart.TabIndex = 21;
             this.lblDepart.Text = "Départ :";
             // 
@@ -103,10 +99,9 @@
             // 
             this.lblFrequence.AutoSize = true;
             this.lblFrequence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblFrequence.Location = new System.Drawing.Point(88, 225);
-            this.lblFrequence.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFrequence.Location = new System.Drawing.Point(59, 146);
             this.lblFrequence.Name = "lblFrequence";
-            this.lblFrequence.Size = new System.Drawing.Size(117, 25);
+            this.lblFrequence.Size = new System.Drawing.Size(84, 17);
             this.lblFrequence.TabIndex = 20;
             this.lblFrequence.Text = "Fréquence :";
             // 
@@ -114,10 +109,9 @@
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblNom.Location = new System.Drawing.Point(147, 148);
-            this.lblNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNom.Location = new System.Drawing.Point(98, 96);
             this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(64, 25);
+            this.lblNom.Size = new System.Drawing.Size(45, 17);
             this.lblNom.TabIndex = 19;
             this.lblNom.Text = "Nom :";
             // 
@@ -125,63 +119,62 @@
             // 
             this.lblModif.AutoSize = true;
             this.lblModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.lblModif.Location = new System.Drawing.Point(376, 35);
-            this.lblModif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModif.Location = new System.Drawing.Point(251, 23);
             this.lblModif.Name = "lblModif";
-            this.lblModif.Size = new System.Drawing.Size(420, 58);
+            this.lblModif.Size = new System.Drawing.Size(286, 39);
             this.lblModif.TabIndex = 18;
             this.lblModif.Text = "Modifier une ligne";
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(224, 148);
-            this.txtNom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNom.Location = new System.Drawing.Point(149, 96);
+            this.txtNom.MaxLength = 50;
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(916, 26);
-            this.txtNom.TabIndex = 34;
+            this.txtNom.Size = new System.Drawing.Size(612, 20);
+            this.txtNom.TabIndex = 0;
             // 
             // txtFrequence
             // 
-            this.txtFrequence.Location = new System.Drawing.Point(224, 225);
-            this.txtFrequence.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFrequence.Location = new System.Drawing.Point(149, 146);
+            this.txtFrequence.MaxLength = 8;
             this.txtFrequence.Name = "txtFrequence";
-            this.txtFrequence.Size = new System.Drawing.Size(916, 26);
-            this.txtFrequence.TabIndex = 33;
+            this.txtFrequence.Size = new System.Drawing.Size(612, 20);
+            this.txtFrequence.TabIndex = 1;
             // 
             // txtDernier
             // 
-            this.txtDernier.Location = new System.Drawing.Point(224, 378);
-            this.txtDernier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDernier.Location = new System.Drawing.Point(149, 246);
+            this.txtDernier.MaxLength = 8;
             this.txtDernier.Name = "txtDernier";
-            this.txtDernier.Size = new System.Drawing.Size(916, 26);
-            this.txtDernier.TabIndex = 32;
+            this.txtDernier.Size = new System.Drawing.Size(612, 20);
+            this.txtDernier.TabIndex = 3;
             // 
             // txtDépart
             // 
-            this.txtDépart.Location = new System.Drawing.Point(224, 302);
-            this.txtDépart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDépart.Location = new System.Drawing.Point(149, 196);
+            this.txtDépart.MaxLength = 8;
             this.txtDépart.Name = "txtDépart";
-            this.txtDépart.Size = new System.Drawing.Size(916, 26);
-            this.txtDépart.TabIndex = 31;
+            this.txtDépart.Size = new System.Drawing.Size(612, 20);
+            this.txtDépart.TabIndex = 2;
             // 
-            // CmbType
+            // cmbType
             // 
-            this.CmbType.FormattingEnabled = true;
-            this.CmbType.Items.AddRange(new object[] {
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
             "Métro",
             "Tramway"});
-            this.CmbType.Location = new System.Drawing.Point(225, 457);
-            this.CmbType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.CmbType.Name = "CmbType";
-            this.CmbType.Size = new System.Drawing.Size(914, 28);
-            this.CmbType.TabIndex = 35;
+            this.cmbType.Location = new System.Drawing.Point(150, 297);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(611, 21);
+            this.cmbType.TabIndex = 4;
             // 
             // FrmModifLigne
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
-            this.Controls.Add(this.CmbType);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbType);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.txtFrequence);
             this.Controls.Add(this.txtDernier);
@@ -194,12 +187,10 @@
             this.Controls.Add(this.lblFrequence);
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.lblModif);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmModifLigne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmModifLigne_FormClosed);
-            this.Load += new System.EventHandler(this.FrmModifLigne_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,6 +210,6 @@
         private System.Windows.Forms.TextBox txtFrequence;
         private System.Windows.Forms.TextBox txtDernier;
         private System.Windows.Forms.TextBox txtDépart;
-        private System.Windows.Forms.ComboBox CmbType;
+        private System.Windows.Forms.ComboBox cmbType;
     }
 }

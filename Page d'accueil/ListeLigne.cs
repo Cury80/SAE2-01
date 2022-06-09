@@ -37,10 +37,10 @@ namespace Page_d_accueil
             }
             else if (sender == cmdModifier)
             {
-                Form modif_ligne = new Page_d_accueil.FrmModifLigne();
+                Form modif_ligne = new Page_d_accueil.FrmModifLigne(Bibliothèque_accès.BDD.Lecture_NomLigne(lstLigne.SelectedItem.ToString()), Bibliothèque_accès.BDD.Lecture_frequence(lstLigne.SelectedItem.ToString()),
+                    Bibliothèque_accès.BDD.Lecture_depart(lstLigne.SelectedItem.ToString()), Bibliothèque_accès.BDD.Lecture_heureDernierDepart(lstLigne.SelectedItem.ToString()), Bibliothèque_accès.BDD.Lecture_TypeTransport(lstLigne.SelectedItem.ToString()));
                 modif_ligne.Owner = this;
                 modif_ligne.ShowDialog();
-                //string ligne_focus = lstLigne.SelectedValue.ToString();
             }
             else if (sender == cmdSupprimer)
             {
@@ -55,11 +55,6 @@ namespace Page_d_accueil
                     lecteurListe.Clear();
                     MessageBox.Show("Supression réussi", "Message");
                     lecteurListe = Bibliothèque_accès.BDD.Lecture_Ligne();
-
-                    foreach (string ligne in lecteurListe)
-                    {
-                        lstLigne.Items.Add(ligne);
-                    }
                 }
                 else 
                 {
@@ -87,6 +82,8 @@ namespace Page_d_accueil
                 lblDepart.Text = $"Départ : {Bibliothèque_accès.BDD.Lecture_depart(lstLigne.SelectedItem.ToString())}";
                 lblDernier.Text = $"Dernier Passage : {Bibliothèque_accès.BDD.Lecture_heureDernierDepart(lstLigne.SelectedItem.ToString())}";
                 lblType.Text = $"Type Transport : {Bibliothèque_accès.BDD.Lecture_TypeTransport(lstLigne.SelectedItem.ToString())}";
+                cmdSupprimer.Enabled = true;
+                cmdModifier.Enabled = true;
             }
            
         }
@@ -95,10 +92,19 @@ namespace Page_d_accueil
 
         private void FrmListeLigne_Activated(object sender, EventArgs e)
         {
+            cmdModifier.Enabled = false;
+            cmdSupprimer.Enabled = false;
+
             fermeture = 0;
+            if (lecteurListe != null)
+            {
+                lecteurListe.Clear();
+            }
+            
 
             lecteurListe = Bibliothèque_accès.BDD.Lecture_Ligne();
             lstLigne.Items.Clear();
+            
 
             foreach (string ligne in lecteurListe)
             {
