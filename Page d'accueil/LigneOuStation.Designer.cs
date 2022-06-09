@@ -80,7 +80,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metram Lille";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmLigneOuStation_FormClosed);
-            this.Load += new System.EventHandler(this.LigneOuStation_Load);
             this.ResumeLayout(false);
 
         }
